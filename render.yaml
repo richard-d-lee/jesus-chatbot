@@ -3,7 +3,7 @@ services:
     name: jesus-chatbot
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python src/main.py
+    startCommand: python3 src/main.py
     envVars:
       - key: OPENAI_API_KEY
         sync: false
