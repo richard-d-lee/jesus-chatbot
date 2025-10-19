@@ -438,63 +438,6 @@ input:checked + .slider:before {
     transform: translateY(-1px);
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .container {
-        height: 100vh;
-        max-width: 100%;
-        border-radius: 0;
-        resize: none;
-    }
-    
-    .header h1 {
-        font-size: 2rem;
-    }
-    
-    .representation-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .chat-input-container {
-        min-height: 100px;
-    }
-    
-    #messageInput {
-        min-height: 60px;
-    }
-    
-    .settings-text {
-        display: none;
-    }
-    
-    .modal-content {
-        width: 95%;
-        margin: 10% auto;
-        max-height: 85vh;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        min-height: 500px;
-    }
-    
-    .chat-messages {
-        padding: 15px 0;
-    }
-    
-    .message {
-        padding: 12px 15px;
-        font-size: 0.9rem;
-    }
-    
-    .settings-section {
-        padding: 20px;
-    }
-}
-
-
-
 /* Donate Button */
 .donate-btn {
     position: absolute;
@@ -546,5 +489,333 @@ input:checked + .slider:before {
 .donate-btn:hover .donate-text {
     opacity: 1;
     max-width: 80px;
+}
+
+/* Mobile Responsiveness - Tablet */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+    
+    .container {
+        height: 100vh;
+        max-width: 100%;
+        border-radius: 0;
+        resize: none;
+        min-height: 100vh;
+    }
+    
+    .header {
+        padding: 20px 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+        margin-top: 5px;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+    }
+    
+    /* Adjust buttons for mobile */
+    .settings-btn {
+        top: 15px;
+        right: 15px;
+        padding: 10px 12px;
+    }
+    
+    .donate-btn {
+        top: 15px;
+        left: 15px;
+        padding: 10px 12px;
+    }
+    
+    .settings-text,
+    .donate-text {
+        display: none !important;
+        opacity: 0 !important;
+        max-width: 0 !important;
+    }
+    
+    .jesus-container {
+        padding: 15px;
+    }
+    
+    .jesus-container img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .chat-container {
+        padding: 0 15px 15px;
+    }
+    
+    .chat-messages {
+        padding: 15px 0;
+        margin-bottom: 15px;
+    }
+    
+    .message {
+        max-width: 90%;
+        padding: 12px 16px;
+        font-size: 0.95rem;
+    }
+    
+    .representation-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .representation-option {
+        padding: 12px;
+    }
+    
+    .representation-option img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .representation-option span {
+        font-size: 0.85rem;
+    }
+    
+    .chat-input-container {
+        min-height: 90px;
+        gap: 10px;
+    }
+    
+    #messageInput {
+        min-height: 70px;
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 12px;
+    }
+    
+    #sendButton {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        min-height: 48px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 2% auto;
+        max-height: 95vh;
+        border-radius: 10px;
+    }
+    
+    .modal-header {
+        padding: 20px 15px;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .settings-section {
+        padding: 20px 15px;
+    }
+    
+    .settings-section h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile Responsiveness - Phone */
+@media (max-width: 480px) {
+    .container {
+        min-height: 100vh;
+    }
+    
+    .header {
+        padding: 15px 10px;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .settings-btn,
+    .donate-btn {
+        top: 12px;
+        padding: 8px 10px;
+        border-radius: 40px;
+    }
+    
+    .settings-btn {
+        right: 12px;
+    }
+    
+    .donate-btn {
+        left: 12px;
+    }
+    
+    .settings-btn svg,
+    .donate-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .jesus-container {
+        padding: 10px;
+    }
+    
+    .jesus-container img {
+        width: 90px;
+        height: 90px;
+        border: 3px solid #fff;
+    }
+    
+    .chat-container {
+        padding: 0 12px 12px;
+    }
+    
+    .chat-messages {
+        padding: 12px 0;
+        margin-bottom: 12px;
+    }
+    
+    .message {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+    
+    .representation-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    .representation-option {
+        padding: 10px;
+    }
+    
+    .representation-option img {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .representation-option span {
+        font-size: 0.8rem;
+    }
+    
+    .chat-input-container {
+        min-height: 80px;
+        gap: 8px;
+    }
+    
+    #messageInput {
+        min-height: 60px;
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 12px;
+    }
+    
+    #sendButton {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    #sendButton svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .modal-content {
+        width: 98%;
+        margin: 1% auto;
+        max-height: 98vh;
+        border-radius: 8px;
+    }
+    
+    .modal-header {
+        padding: 15px 12px;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .settings-section {
+        padding: 15px 12px;
+    }
+    
+    .settings-section h3 {
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+    }
+    
+    .toggle-container {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .toggle {
+        width: 54px;
+        height: 30px;
+    }
+    
+    .slider:before {
+        height: 22px;
+        width: 22px;
+    }
+    
+    input:checked + .slider:before {
+        transform: translateX(24px);
+    }
+    
+    .bible-version-container select {
+        font-size: 16px; /* Prevents zoom on iOS */
+        padding: 12px;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .container {
+        height: 100vh;
+    }
+    
+    .header {
+        padding: 10px 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 2px;
+    }
+    
+    .subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .jesus-container {
+        padding: 8px;
+    }
+    
+    .jesus-container img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .chat-messages {
+        padding: 10px 0;
+        margin-bottom: 10px;
+    }
+    
+    .chat-input-container {
+        min-height: 70px;
+    }
+    
+    #messageInput {
+        min-height: 50px;
+    }
 }
 
