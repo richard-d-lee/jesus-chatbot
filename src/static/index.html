@@ -10,29 +10,34 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Jesus Christ</h1>
-            <p class="subtitle">Christ resurrected for all intents and purposes</p>
+            <!-- Left side: Jesus image + Title -->
+            <div class="header-left">
+                <img id="headerJesusImage" src="images/current_jesus.png" alt="Jesus Christ" title="Current Jesus" class="header-jesus-img">
+                <div class="header-title-group">
+                    <h1>Jesus Christ</h1>
+                    <p class="subtitle">Christ resurrected for all intents and purposes</p>
+                </div>
+            </div>
             
-            <!-- Settings Button -->
-            <button class="settings-btn" id="settingsBtn" title="Settings">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="3"></circle>
-                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V6a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V12a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-                </svg>
-                <span class="settings-text">Settings</span>
-            </button>
+            <!-- Right side: Donate + Settings buttons -->
+            <div class="header-right">
+                <!-- Donate Button -->
+                <a href="https://buymeacoffee.com/jesusexpress" target="_blank" class="donate-btn" title="Support this project">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
+                    <span class="donate-text">Donate</span>
+                </a>
 
-            <!-- Donate Button -->
-            <a href="https://buymeacoffee.com/jesusexpress" target="_blank" class="donate-btn" title="Support this project">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                </svg>
-                <span class="donate-text">Donate</span>
-            </a>
-        </div>
-
-        <div class="jesus-container">
-            <img id="jesusImage" src="images/current_jesus.png" alt="Jesus Christ" title="Current Jesus">
+                <!-- Settings Button -->
+                <button class="settings-btn" id="settingsBtn" title="Settings">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V6a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V12a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                    <span class="settings-text">Settings</span>
+                </button>
+            </div>
         </div>
 
         <div class="chat-container">
@@ -52,65 +57,84 @@
                 </button>
             </div>
         </div>
-    </div>
 
-    <!-- Settings Modal -->
-    <div id="settingsModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Settings</h2>
+        <!-- Settings Modal -->
+        <div id="settingsModal" class="modal">
+            <div class="modal-content">
                 <button class="close-btn" id="closeSettings">&times;</button>
-            </div>
-            
-            <div class="settings-section">
-                <h3>🙏 Jesus Representation</h3>
-                <div class="representation-grid">
-                    <div class="representation-option" data-representation="traditional">
-                        <img src="images/traditional_western_jesus.png" alt="Traditional Western">
-                        <span>Western Tradition</span>
-                    </div>
-                    <div class="representation-option" data-representation="historical">
-                        <img src="images/historical_middle_eastern_jesus.png" alt="Historically Accurate">
-                        <span>Historically Accurate</span>
-                    </div>
-                    <div class="representation-option" data-representation="african">
-                        <img src="images/african_diaspora_jesus.png" alt="African Diaspora">
-                        <span>African Diaspora</span>
-                    </div>
-                    <div class="representation-option" data-representation="mormon">
-                        <img src="images/mormon_jesus.png" alt="Mormon">
-                        <span>Mormon</span>
-                    </div>
-                    <div class="representation-option" data-representation="ai">
-                        <img src="images/ai_jesus.png" alt="AI Jesus">
-                        <span>AI Jesus</span>
-                    </div>
-                    <div class="representation-option active" data-representation="current">
-                        <img src="images/current_jesus.png" alt="Current Jesus">
-                        <span>Current Jesus</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="settings-section">
-                <h3>📖 Scripture Mode</h3>
-                <div class="toggle-container">
-                    <label class="toggle">
-                        <input type="checkbox" id="scriptureToggle">
-                        <span class="slider"></span>
-                    </label>
-                    <span>Include scripture references in responses</span>
-                </div>
+                <h2>Settings</h2>
                 
-                <div id="bibleVersionContainer" class="bible-version-container" style="display: none;">
+                <div class="settings-section">
+                    <label class="toggle-label">
+                        <input type="checkbox" id="scriptureMode">
+                        <span class="toggle-slider"></span>
+                        Scripture Mode
+                    </label>
+                    <p class="setting-description">Include relevant Bible verses in responses</p>
+                </div>
+
+                <div class="settings-section">
                     <label for="bibleVersion">Bible Version:</label>
                     <select id="bibleVersion">
-                        <option value="kjv">King James Version (KJV)</option>
-                        <option value="niv">New International Version (NIV)</option>
-                        <option value="esv">English Standard Version (ESV)</option>
-                        <option value="nasb">New American Standard Bible (NASB)</option>
-                        <option value="nlt">New Living Translation (NLT)</option>
+                        <option value="KJV">King James Version (KJV)</option>
+                        <option value="NIV">New International Version (NIV)</option>
+                        <option value="ESV">English Standard Version (ESV)</option>
+                        <option value="NASB">New American Standard Bible (NASB)</option>
+                        <option value="NLT">New Living Translation (NLT)</option>
                     </select>
+                </div>
+
+                <div class="settings-section">
+                    <button id="selectRepresentationBtn" class="action-btn">
+                        Select Jesus Representation
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jesus Representation Selection Modal -->
+        <div id="representationModal" class="modal">
+            <div class="modal-content">
+                <button class="close-btn" id="closeRepresentation">&times;</button>
+                <h2>Choose Your Jesus</h2>
+                <p class="modal-description">Select which representation of Jesus you'd like to speak with</p>
+                
+                <div class="representation-grid">
+                    <div class="representation-card" data-representation="traditional">
+                        <img src="images/traditional_jesus.png" alt="Traditional Jesus">
+                        <h3>Traditional Western Jesus</h3>
+                        <p>The classic portrayal with flowing robes and gentle demeanor</p>
+                    </div>
+                    
+                    <div class="representation-card" data-representation="historical">
+                        <img src="images/historical_jesus.png" alt="Historical Jesus">
+                        <h3>Historical Middle Eastern Jesus</h3>
+                        <p>Based on historical and archaeological understanding</p>
+                    </div>
+                    
+                    <div class="representation-card" data-representation="african">
+                        <img src="images/african_jesus.png" alt="African Jesus">
+                        <h3>African Diaspora Jesus</h3>
+                        <p>Reflecting the African Christian tradition and experience</p>
+                    </div>
+                    
+                    <div class="representation-card" data-representation="mormon">
+                        <img src="images/mormon_jesus.png" alt="Mormon Jesus">
+                        <h3>Mormon Jesus</h3>
+                        <p>Jesus as portrayed in the Book of Mormon tradition</p>
+                    </div>
+                    
+                    <div class="representation-card" data-representation="ai">
+                        <img src="images/ai_jesus.png" alt="AI Jesus">
+                        <h3>AI Jesus</h3>
+                        <p>A futuristic, digital consciousness interpretation</p>
+                    </div>
+                    
+                    <div class="representation-card active" data-representation="current">
+                        <img src="images/current_jesus.png" alt="Current Jesus">
+                        <h3>Current Jesus</h3>
+                        <p>Jesus walking among us today in the 21st century</p>
+                    </div>
                 </div>
             </div>
         </div>
