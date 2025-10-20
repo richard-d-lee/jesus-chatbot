@@ -2,7 +2,7 @@ class JesusChatbot {
     constructor() {
         this.currentRepresentation = 'current';
         this.scriptureMode = false;
-        this.bibleVersion = 'kjv';
+        this.bibleVersion = 'KJV';
         
         // Conversation histories for each representation
         this.conversations = {
@@ -47,18 +47,25 @@ class JesusChatbot {
         document.getElementById('settingsBtn').addEventListener('click', () => this.showSettingsModal());
         document.getElementById('closeSettings').addEventListener('click', () => this.hideSettingsModal());
         
-        // Representation selection
-        document.querySelectorAll('.representation-option').forEach(option => {
-            option.addEventListener('click', () => {
-                const representation = option.dataset.representation;
+        // Representation modal
+        document.getElementById('selectRepresentationBtn').addEventListener('click', () => this.showRepresentationModal());
+        document.getElementById('closeRepresentation').addEventListener('click', () => this.hideRepresentationModal());
+        
+        // Jesus image click to open representation selector
+        document.getElementById('headerJesusImage').addEventListener('click', () => this.showRepresentationModal());
+        document.getElementById('headerJesusImage').style.cursor = 'pointer';
+        
+        // Representation selection - FIXED: changed from .representation-option to .representation-card
+        document.querySelectorAll('.representation-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const representation = card.dataset.representation;
                 this.selectRepresentation(representation);
             });
         });
         
-        // Scripture mode toggle
-        document.getElementById('scriptureToggle').addEventListener('change', (e) => {
+        // Scripture mode toggle - FIXED: changed from scriptureToggle to scriptureMode
+        document.getElementById('scriptureMode').addEventListener('change', (e) => {
             this.scriptureMode = e.target.checked;
-            this.toggleBibleVersionContainer();
         });
         
         // Bible version selection
@@ -82,13 +89,24 @@ class JesusChatbot {
         document.getElementById('settingsModal').style.display = 'none';
     }
     
+    showRepresentationModal() {
+        // Hide settings modal if open
+        this.hideSettingsModal();
+        // Show representation modal
+        document.getElementById('representationModal').style.display = 'block';
+    }
+    
+    hideRepresentationModal() {
+        document.getElementById('representationModal').style.display = 'none';
+    }
+    
     selectRepresentation(representation) {
         // Update current representation
         this.currentRepresentation = representation;
         
-        // Update UI
-        document.querySelectorAll('.representation-option').forEach(option => {
-            option.classList.remove('active');
+        // Update UI - FIXED: changed from .representation-option to .representation-card
+        document.querySelectorAll('.representation-card').forEach(card => {
+            card.classList.remove('active');
         });
         document.querySelector(`[data-representation="${representation}"]`).classList.add('active');
         
@@ -101,32 +119,34 @@ class JesusChatbot {
         // Display initial message
         this.displayInitialMessage();
         
-        // Hide settings modal
-        this.hideSettingsModal();
+        // Hide representation modal
+        this.hideRepresentationModal();
     }
     
     updateJesusImage() {
         const imageMap = {
-            'traditional': 'images/traditional_western_jesus.png',
-            'historical': 'images/historical_middle_eastern_jesus.png',
-            'african': 'images/african_diaspora_jesus.png',
+            'traditional': 'images/traditional_jesus.png',
+            'historical': 'images/historical_jesus.png',
+            'african': 'images/african_jesus.png',
             'mormon': 'images/mormon_jesus.png',
             'ai': 'images/ai_jesus.png',
             'current': 'images/current_jesus.png'
         };
         
         const titleMap = {
-            'traditional': 'Western Tradition',
-            'historical': 'Historically Accurate',
-            'african': 'African Diaspora',
-            'mormon': 'Mormon',
+            'traditional': 'Traditional Western Jesus',
+            'historical': 'Historical Middle Eastern Jesus',
+            'african': 'African Diaspora Jesus',
+            'mormon': 'Mormon Jesus',
             'ai': 'AI Jesus',
             'current': 'Current Jesus'
         };
         
-        const jesusImage = document.getElementById('jesusImage');
+        // FIXED: changed from jesusImage to headerJesusImage
+        const jesusImage = document.getElementById('headerJesusImage');
         jesusImage.src = imageMap[this.currentRepresentation];
         jesusImage.title = titleMap[this.currentRepresentation];
+        jesusImage.alt = titleMap[this.currentRepresentation];
     }
     
     displayInitialMessage() {
@@ -160,11 +180,6 @@ class JesusChatbot {
         conversation.forEach(message => {
             this.addMessageToChat(message.content, message.sender, false);
         });
-    }
-    
-    toggleBibleVersionContainer() {
-        const container = document.getElementById('bibleVersionContainer');
-        container.style.display = this.scriptureMode ? 'block' : 'none';
     }
     
     async handleSendMessage() {
