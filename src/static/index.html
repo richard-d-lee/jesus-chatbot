@@ -12,7 +12,7 @@
         <div class="header">
             <!-- Left side: Jesus image + Title -->
             <div class="header-left">
-                <img id="headerJesusImage" src="images/current_jesus.png" alt="Jesus Christ" title="Current Jesus" class="header-jesus-img">
+                <img id="headerJesusImage" src="images/current_jesus.png" alt="Jesus Christ" title="Current Jesus">
                 <div class="header-title-group">
                     <h1>Jesus Christ</h1>
                     <p class="subtitle">Christ resurrected for all intents and purposes</p>
@@ -23,39 +23,39 @@
             <div class="header-right">
                 <!-- Donate Button -->
                 <a href="https://buymeacoffee.com/jesusexpress" target="_blank" class="donate-btn" title="Support this project">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                     </svg>
                     <span class="donate-text">Donate</span>
                 </a>
-
+                
                 <!-- Settings Button -->
                 <button class="settings-btn" id="settingsBtn" title="Settings">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="3"></circle>
-                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V6a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V12a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        <path d="M12 1v6m0 6v6m5.2-13.2l-4.2 4.2m0 6l4.2 4.2M23 12h-6m-6 0H1m18.2 5.2l-4.2-4.2m0-6l4.2-4.2"></path>
                     </svg>
                     <span class="settings-text">Settings</span>
                 </button>
             </div>
         </div>
 
-        <div class="chat-container">
-            <div class="chat-messages" id="chatMessages">
-                <div class="message jesus-message">
-                    <span id="initialMessage">Hey there, friend. I'm walking among you today, right here in the 21st century. I see the challenges you face - the division, the anxiety, the search for meaning in a digital world. Let's talk about what's on your mind.</span>
+        <div class="chat-container" id="chatContainer">
+            <div class="message bot-message">
+                <div class="message-content" id="initialMessage">
+                    Hey there, friend. I'm walking among you today, right here in the 21st century. I see the challenges you face - the division, the anxiety, the search for meaning in a digital world. Let's talk about what's on your mind.
                 </div>
             </div>
-            
-            <div class="chat-input-container">
-                <textarea id="messageInput" placeholder="Share your thoughts, questions, or seek guidance..." rows="3"></textarea>
-                <button id="sendButton">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="22" y1="2" x2="11" y2="13"></line>
-                        <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
-                    </svg>
-                </button>
-            </div>
+        </div>
+
+        <div class="input-container">
+            <textarea id="userInput" placeholder="Share your thoughts, questions, or seek guidance..." rows="1"></textarea>
+            <button id="sendBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
         </div>
 
         <!-- Settings Modal -->
@@ -64,16 +64,16 @@
                 <button class="close-btn" id="closeSettings">&times;</button>
                 <h2>Settings</h2>
                 
-                <div class="settings-section">
+                <div class="setting-group">
                     <label class="toggle-label">
                         <input type="checkbox" id="scriptureMode">
                         <span class="toggle-slider"></span>
-                        Scripture Mode
+                        <span>Scripture Mode</span>
                     </label>
                     <p class="setting-description">Include relevant Bible verses in responses</p>
                 </div>
 
-                <div class="settings-section">
+                <div class="setting-group">
                     <label for="bibleVersion">Bible Version:</label>
                     <select id="bibleVersion">
                         <option value="KJV">King James Version (KJV)</option>
@@ -84,15 +84,11 @@
                     </select>
                 </div>
 
-                <div class="settings-section">
-                    <button id="selectRepresentationBtn" class="action-btn">
-                        Select Jesus Representation
-                    </button>
-                </div>
+                <button class="primary-btn" id="selectRepresentation">Select Jesus Representation</button>
             </div>
         </div>
 
-        <!-- Jesus Representation Selection Modal -->
+        <!-- Jesus Representation Modal -->
         <div id="representationModal" class="modal">
             <div class="modal-content">
                 <button class="close-btn" id="closeRepresentation">&times;</button>
@@ -101,19 +97,19 @@
                 
                 <div class="representation-grid">
                     <div class="representation-card" data-representation="traditional">
-                        <img src="images/traditional_jesus.png" alt="Traditional Jesus">
+                        <img src="images/traditional_western_jesus.png" alt="Traditional Jesus">
                         <h3>Traditional Western Jesus</h3>
                         <p>The classic portrayal with flowing robes and gentle demeanor</p>
                     </div>
                     
                     <div class="representation-card" data-representation="historical">
-                        <img src="images/historical_jesus.png" alt="Historical Jesus">
+                        <img src="images/historical_middle_eastern_jesus.png" alt="Historical Jesus">
                         <h3>Historical Middle Eastern Jesus</h3>
                         <p>Based on historical and archaeological understanding</p>
                     </div>
                     
                     <div class="representation-card" data-representation="african">
-                        <img src="images/african_jesus.png" alt="African Jesus">
+                        <img src="images/african_diaspora_jesus.png" alt="African Jesus">
                         <h3>African Diaspora Jesus</h3>
                         <p>Reflecting the African Christian tradition and experience</p>
                     </div>
