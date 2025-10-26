@@ -125,9 +125,9 @@ class JesusChatbot {
     
     updateJesusImage() {
         const imageMap = {
-            'traditional': 'images/traditional_jesus.png',
-            'historical': 'images/historical_jesus.png',
-            'african': 'images/african_jesus.png',
+            'traditional': 'images/traditional_western_jesus.png',
+            'historical': 'images/historical_middle_eastern_jesus.png',
+            'african': 'images/african_diaspora_jesus.png',
             'mormon': 'images/mormon_jesus.png',
             'ai': 'images/ai_jesus.png',
             'current': 'images/current_jesus.png'
