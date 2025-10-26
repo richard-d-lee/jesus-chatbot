@@ -6,7 +6,7 @@ import os
 chatbot_bp = Blueprint('chatbot', __name__)
 
 # Get OpenAI API key from environment or use hardcoded fallback
-OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY') or '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'
+OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
 print(f"[DEBUG] API Key loaded: {OPENAI_API_KEY[:20]}...{OPENAI_API_KEY[-10:]}")
 
 @chatbot_bp.route('/chat', methods=['POST'])
