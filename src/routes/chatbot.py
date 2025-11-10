@@ -10,7 +10,10 @@ chatbot_bp = Blueprint('chatbot', __name__)
 
 # Get OpenAI API key from environment or use hardcoded fallback
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
-print(f"[DEBUG] API Key loaded: {OPENAI_API_KEY[:20]}...{OPENAI_API_KEY[-10:]}")
+if OPENAI_API_KEY:
+    print(f"[DEBUG] API Key loaded: {OPENAI_API_KEY[:20]}...{OPENAI_API_KEY[-10:]}")
+else:
+    print("[WARNING] OPENAI_API_KEY environment variable is not set")
 
 @chatbot_bp.route('/chat', methods=['POST'])
 def chat():
