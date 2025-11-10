@@ -2,6 +2,9 @@ from flask import Blueprint, request, jsonify
 import requests
 import json
 import os
+from src.models.chat_log import ChatLog
+from src.models.user import db
+from src.utils.geolocation import get_client_ip, get_location_from_ip
 
 chatbot_bp = Blueprint('chatbot', __name__)
 
@@ -61,6 +64,17 @@ def chat():
             if response.status_code == 200:
                 result = response.json()
                 ai_response = result['choices'][0]['message']['content']
+                
+                # Log the conversation
+                log_chat_interaction(
+                    user_message=message,
+                    bot_response=ai_response,
+                    representation=representation,
+                    scripture_mode=scripture_mode,
+                    bible_version=bible_version,
+                    response_source='openai'
+                )
+                
                 return jsonify({
                     'success': True,
                     'response': ai_response,
@@ -69,6 +83,17 @@ def chat():
             else:
                 # Fallback if API fails
                 fallback_response = get_fallback_response(representation, message, scripture_mode, bible_version)
+                
+                # Log the conversation
+                log_chat_interaction(
+                    user_message=message,
+                    bot_response=fallback_response,
+                    representation=representation,
+                    scripture_mode=scripture_mode,
+                    bible_version=bible_version,
+                    response_source='fallback'
+                )
+                
                 return jsonify({
                     'success': True,
                     'response': fallback_response,
@@ -78,6 +103,17 @@ def chat():
             print(f"OpenAI API error: {e}")
             # Fallback responses
             fallback_response = get_fallback_response(representation, message, scripture_mode, bible_version)
+            
+            # Log the conversation
+            log_chat_interaction(
+                user_message=message,
+                bot_response=fallback_response,
+                representation=representation,
+                scripture_mode=scripture_mode,
+                bible_version=bible_version,
+                response_source='fallback'
+            )
+            
             return jsonify({
                 'success': True,
                 'response': fallback_response,
@@ -212,4 +248,39 @@ def get_fallback_response(representation, message, scripture_mode, bible_version
         base_response += f"\n\n{scripture}"
     
     return base_response
+
+def log_chat_interaction(user_message, bot_response, representation, scripture_mode, bible_version, response_source):
+    """
+    Log a chat interaction to the database with location data.
+    """
+    try:
+        # Get client IP and location
+        ip_address = get_client_ip()
+        location_data = get_location_from_ip(ip_address)
+        
+        # Create log entry
+        chat_log = ChatLog(
+            user_message=user_message,
+            bot_response=bot_response,
+            representation=representation,
+            scripture_mode=scripture_mode,
+            bible_version=bible_version if scripture_mode else None,
+            ip_address=ip_address,
+            country=location_data.get('country'),
+            region=location_data.get('region'),
+            city=location_data.get('city'),
+            latitude=location_data.get('latitude'),
+            longitude=location_data.get('longitude'),
+            response_source=response_source
+        )
+        
+        db.session.add(chat_log)
+        db.session.commit()
+        
+        print(f"[LOG] Chat logged: {representation} from {location_data.get('city', 'Unknown')}, {location_data.get('country', 'Unknown')}")
+    
+    except Exception as e:
+        print(f"[ERROR] Failed to log chat interaction: {e}")
+        # Don't fail the request if logging fails
+        db.session.rollback()
 
