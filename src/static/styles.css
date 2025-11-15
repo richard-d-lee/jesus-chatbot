@@ -687,3 +687,33 @@ body {
     }
 }
 
+
+/* Accessibility - Visually Hidden */
+.visually-hidden {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* SEO Content - Hidden but crawlable */
+.seo-content {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.seo-content h2,
+.seo-content h3 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.seo-content p,
+.seo-content ul {
+    font-size: 0.875rem;
+    margin: 0;
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <url>
+        <loc>https://jesus-chatbot.onrender.com/</loc>
+        <lastmod>2025-11-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://jesus-chatbot.onrender.com/images/current_jesus.png</image:loc>
+            <image:title>Current Jesus - Chat with Jesus AI</image:title>
+            <image:caption>Jesus walking among us in the 21st century</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://jesus-chatbot.onrender.com/images/traditional_western_jesus.png</image:loc>
+            <image:title>Traditional Western Jesus</image:title>
+            <image:caption>Classic portrayal of Jesus Christ</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://jesus-chatbot.onrender.com/images/historical_middle_eastern_jesus.png</image:loc>
+            <image:title>Historical Middle Eastern Jesus</image:title>
+            <image:caption>Historically accurate representation of Jesus</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://jesus-chatbot.onrender.com/images/african_diaspora_jesus.png</image:loc>
+            <image:title>African Diaspora Jesus</image:title>
+            <image:caption>Jesus in African Christian tradition</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://jesus-chatbot.onrender.com/images/mormon_jesus.png</image:loc>
+            <image:title>Mormon Jesus</image:title>
+            <image:caption>Jesus from Book of Mormon tradition</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://jesus-chatbot.onrender.com/images/ai_jesus.png</image:loc>
+            <image:title>AI Jesus</image:title>
+            <image:caption>Futuristic digital Jesus consciousness</image:caption>
+        </image:image>
+    </url>
+</urlset>

@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+Allow: /images/
+Allow: /styles.css
+Allow: /script.js
+
+Disallow: /api/
+Disallow: /admin/
+Disallow: /database/
+
+Sitemap: https://jesus-chatbot.onrender.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1

@@ -36,6 +36,15 @@ with app.app_context():
 scheduler = LogCleanupScheduler(app)
 scheduler.start()
 
+# SEO Routes - Explicit routes for better SEO
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory(app.static_folder, 'sitemap.xml', mimetype='application/xml')
+
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory(app.static_folder, 'robots.txt', mimetype='text/plain')
+
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve(path):
