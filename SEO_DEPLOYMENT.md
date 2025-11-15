@@ -56,16 +56,16 @@ Or manually trigger a deploy in your Render dashboard.
 ### 4. Verify Deployment
 
 After deployment, verify these URLs work:
-- https://your-domain.com/ (main page)
-- https://your-domain.com/sitemap.xml
-- https://your-domain.com/robots.txt
+- https://jesus-chatbot.onrender.com/ (main page)
+- https://jesus-chatbot.onrender.com/sitemap.xml
+- https://jesus-chatbot.onrender.com/robots.txt
 
 ### 5. Submit to Google Search Console
 
 1. Go to [Google Search Console](https://search.google.com/search-console)
 2. Add your property (your website URL)
 3. Verify ownership (Google Site Verification meta tag is already in HTML)
-4. Submit your sitemap: https://your-domain.com/sitemap.xml
+4. Submit your sitemap: https://jesus-chatbot.onrender.com/sitemap.xml
 5. Request indexing for your homepage
 
 ### 6. Test Structured Data

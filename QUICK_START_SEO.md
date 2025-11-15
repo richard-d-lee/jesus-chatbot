@@ -31,9 +31,9 @@ git push origin main
 ### Step 3: Verify Deployment (5 minutes after push)
 
 Visit these URLs and verify they work:
-- ✅ https://your-domain.com/
-- ✅ https://your-domain.com/sitemap.xml
-- ✅ https://your-domain.com/robots.txt
+- ✅ https://jesus-chatbot.onrender.com/
+- ✅ https://jesus-chatbot.onrender.com/sitemap.xml
+- ✅ https://jesus-chatbot.onrender.com/robots.txt
 
 ### Step 4: Submit to Google (10 minutes)
 

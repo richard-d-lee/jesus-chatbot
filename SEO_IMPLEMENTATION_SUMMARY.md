@@ -269,15 +269,15 @@ git push origin main
 
 ### Step 4: Verify Deployment
 After deployment, check these URLs work:
-- https://your-domain.com/
-- https://your-domain.com/sitemap.xml
-- https://your-domain.com/robots.txt
+- https://jesus-chatbot.onrender.com/
+- https://jesus-chatbot.onrender.com/sitemap.xml
+- https://jesus-chatbot.onrender.com/robots.txt
 
 ### Step 5: Submit to Google
 1. Go to [Google Search Console](https://search.google.com/search-console)
 2. Add your property
 3. Verify ownership (meta tag already in HTML)
-4. Submit sitemap: https://your-domain.com/sitemap.xml
+4. Submit sitemap: https://jesus-chatbot.onrender.com/sitemap.xml
 5. Request indexing for homepage
 
 ---
