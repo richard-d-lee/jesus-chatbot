@@ -35,13 +35,14 @@
         
         .contact-header h1 {
             font-size: 2.5rem;
-            color: #2d3748;
+            color: #ffffff;
             margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         
         .contact-header p {
             font-size: 1.2rem;
-            color: #718096;
+            color: #e2e8f0;
         }
         
         .contact-card {
@@ -127,15 +128,20 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: #4299e1;
+            color: #ffffff;
+            background: rgba(66, 153, 225, 0.9);
+            padding: 10px 20px;
+            border-radius: 8px;
             text-decoration: none;
             font-size: 1.1rem;
             margin-bottom: 30px;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
         
         .back-link:hover {
-            color: #3182ce;
+            background: rgba(49, 130, 206, 1);
+            transform: translateX(-5px);
         }
         
         .icon {
@@ -209,10 +215,10 @@
             </div>
         </div>
         
-        <div style="text-align: center; margin-top: 40px; color: #718096;">
-            <p>Thank you for using Jesus Chatbot</p>
+        <div style="text-align: center; margin-top: 40px; color: #e2e8f0;">
+            <p style="font-size: 1.1rem; font-weight: 500;">Thank you for using Jesus Chatbot</p>
             <p style="font-size: 0.9rem; margin-top: 10px;">
-                <a href="/" style="color: #4299e1; text-decoration: none;">Return to Chat</a>
+                <a href="/" style="color: #ffffff; background: rgba(66, 153, 225, 0.9); padding: 8px 16px; border-radius: 6px; text-decoration: none; display: inline-block; transition: all 0.3s ease;" onmouseover="this.style.background='rgba(49, 130, 206, 1)'" onmouseout="this.style.background='rgba(66, 153, 225, 0.9)'">Return to Chat</a>
             </p>
         </div>
     </div>
