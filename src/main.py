@@ -45,6 +45,10 @@ def sitemap():
 def robots():
     return send_from_directory(app.static_folder, 'robots.txt', mimetype='text/plain')
 
+@app.route('/contact')
+def contact():
+    return send_from_directory(app.static_folder, 'contact.html')
+
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve(path):
