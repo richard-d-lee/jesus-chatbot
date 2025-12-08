@@ -1,6 +1,6 @@
 # Complete AI Directory Submission Walkthrough
 
-This guide walks you through submitting your Jesus Chatbot to major AI directories step by step. Each submission takes about 5-10 minutes.
+This guide walks you through submitting your Jesus Express to major AI directories step by step. Each submission takes about 5-10 minutes.
 
 ---
 
@@ -20,7 +20,7 @@ This guide walks you through submitting your Jesus Chatbot to major AI directori
 
    **Name of product***  
    ```
-   Jesus Chatbot
+   Jesus Express
    ```
 
    **URL***  
@@ -40,7 +40,7 @@ This guide walks you through submitting your Jesus Chatbot to major AI directori
 
    **Long description (50-500 words)***  
    ```
-   Jesus Chatbot is a free spiritual AI companion that allows users to have meaningful conversations with six distinct representations of Jesus Christ. Each representation offers a unique perspective based on different cultural, historical, and theological traditions.
+   Jesus Express is a free spiritual AI companion that allows users to have meaningful conversations with six distinct representations of Jesus Christ. Each representation offers a unique perspective based on different cultural, historical, and theological traditions.
 
    The chatbot features Traditional Western Jesus, Historical Middle Eastern Jesus based on archaeological understanding, African Diaspora Jesus reflecting African Christian traditions, Mormon Jesus from Book of Mormon teachings, AI Jesus as a digital consciousness, and Current Jesus walking among us in the 21st century.
 
@@ -48,7 +48,7 @@ This guide walks you through submitting your Jesus Chatbot to major AI directori
 
    The platform includes conversation history features allowing users to save and revisit their spiritual discussions. Optional user authentication enables conversation persistence across devices. The interface is fully mobile-responsive, ensuring a seamless experience on all screen sizes.
 
-   Whether seeking spiritual guidance, exploring biblical teachings, or simply wanting to reflect on faith in a modern context, Jesus Chatbot offers an accessible and free way to engage with Christian spirituality through AI technology.
+   Whether seeking spiritual guidance, exploring biblical teachings, or simply wanting to reflect on faith in a modern context, Jesus Express offers an accessible and free way to engage with Christian spirituality through AI technology.
    ```
 
    **Tags / Keywords / Hashtags*** (Write 1-3)  
@@ -89,7 +89,7 @@ This guide walks you through submitting your Jesus Chatbot to major AI directori
 
    **Tool Name**  
    ```
-   Jesus Chatbot
+   Jesus Express
    ```
 
    **Tool URL**  
@@ -114,7 +114,7 @@ This guide walks you through submitting your Jesus Chatbot to major AI directori
 
    **Long Description** (if requested)  
    ```
-   Jesus Chatbot is a free spiritual AI companion offering meaningful conversations with six distinct representations of Jesus Christ based on different cultural, historical, and theological traditions. Features include Traditional Western Jesus, Historical Middle Eastern Jesus, African Diaspora Jesus, Mormon Jesus, AI Jesus, and Current Jesus. Users can enable Scripture Mode for responses with relevant Bible verses. The platform includes conversation history, optional authentication, and mobile-responsive design for spiritual guidance and biblical exploration.
+   Jesus Express is a free spiritual AI companion offering meaningful conversations with six distinct representations of Jesus Christ based on different cultural, historical, and theological traditions. Features include Traditional Western Jesus, Historical Middle Eastern Jesus, African Diaspora Jesus, Mormon Jesus, AI Jesus, and Current Jesus. Users can enable Scripture Mode for responses with relevant Bible verses. The platform includes conversation history, optional authentication, and mobile-responsive design for spiritual guidance and biblical exploration.
    ```
 
    **Your Name**  
@@ -150,7 +150,7 @@ This guide walks you through submitting your Jesus Chatbot to major AI directori
 
    **Chatbot Name**  
    ```
-   Jesus Chatbot
+   Jesus Express
    ```
 
    **URL**  
@@ -170,7 +170,7 @@ This guide walks you through submitting your Jesus Chatbot to major AI directori
 
    **Description**  
    ```
-   Jesus Chatbot is a free AI-powered spiritual companion that enables users to have meaningful conversations with six unique representations of Jesus Christ. Each representation reflects different cultural, historical, and theological perspectives including Traditional Western, Historical Middle Eastern, African Diaspora, Mormon, AI, and Current Jesus.
+   Jesus Express is a free AI-powered spiritual companion that enables users to have meaningful conversations with six unique representations of Jesus Christ. Each representation reflects different cultural, historical, and theological perspectives including Traditional Western, Historical Middle Eastern, African Diaspora, Mormon, AI, and Current Jesus.
 
    The chatbot features Scripture Mode which enriches responses with relevant Bible verses from multiple translations (KJV, NIV, ESV, NRSV). Users can save conversation history, access the platform from any device, and enjoy a mobile-responsive interface.
 
@@ -215,7 +215,7 @@ This guide walks you through submitting your Jesus Chatbot to major AI directori
 
    **Tool Name**  
    ```
-   Jesus Chatbot
+   Jesus Express
    ```
 
    **Website**  
@@ -261,7 +261,7 @@ This guide walks you through submitting your Jesus Chatbot to major AI directori
 
    **Tool Name**  
    ```
-   Jesus Chatbot
+   Jesus Express
    ```
 
    **Tool URL**  
@@ -286,7 +286,7 @@ This guide walks you through submitting your Jesus Chatbot to major AI directori
 
    **Full Description**  
    ```
-   Jesus Chatbot is a free spiritual AI companion offering conversations with six distinct Jesus representations: Traditional Western, Historical Middle Eastern, African Diaspora, Mormon, AI, and Current Jesus. Features Scripture Mode with KJV, NIV, ESV, and NRSV Bible verses, conversation saving, and mobile-responsive design.
+   Jesus Express is a free spiritual AI companion offering conversations with six distinct Jesus representations: Traditional Western, Historical Middle Eastern, African Diaspora, Mormon, AI, and Current Jesus. Features Scripture Mode with KJV, NIV, ESV, and NRSV Bible verses, conversation saving, and mobile-responsive design.
    ```
 
    **Your Name**  
@@ -326,7 +326,7 @@ This guide walks you through submitting your Jesus Chatbot to major AI directori
 
    **Name**  
    ```
-   Jesus Chatbot
+   Jesus Express
    ```
 
    **Tagline** (60 characters max)  
@@ -390,7 +390,7 @@ This guide walks you through submitting your Jesus Chatbot to major AI directori
 
    **AI Tool Name**  
    ```
-   Jesus Chatbot
+   Jesus Express
    ```
 
    **URL**  
@@ -436,7 +436,7 @@ This guide walks you through submitting your Jesus Chatbot to major AI directori
 
    **Tool Name**  
    ```
-   Jesus Chatbot
+   Jesus Express
    ```
 
    **Website URL**  

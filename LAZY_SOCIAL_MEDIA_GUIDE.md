@@ -52,7 +52,7 @@ I built a free AI chatbot to chat with Jesus Christ
 
 **Body:**
 ```
-Hey everyone! I just launched Jesus Chatbot - a free AI spiritual companion.
+Hey everyone! I just launched Jesus Express - a free AI spiritual companion.
 
 **What it does:**
 - Chat with 6 different representations of Jesus (Traditional Western, Historical Middle Eastern, African Diaspora, Mormon, AI, and Current Jesus)
@@ -88,7 +88,7 @@ Try it: https://jesus-chatbot.onrender.com/
 
 **Option 2 (More detailed):**
 ```
-Launched Jesus Chatbot - a free spiritual AI companion 🙏
+Launched Jesus Express - a free spiritual AI companion 🙏
 
 Features:
 • 6 Jesus representations (Traditional, Historical, African, Mormon, AI, Current)
@@ -107,7 +107,7 @@ https://jesus-chatbot.onrender.com/
 ### LinkedIn Post (If you want)
 
 ```
-I'm excited to share Jesus Chatbot - a free AI-powered spiritual companion I recently launched.
+I'm excited to share Jesus Express - a free AI-powered spiritual companion I recently launched.
 
 The platform offers conversations with six distinct representations of Jesus Christ, each reflecting different cultural, historical, and theological perspectives:
 

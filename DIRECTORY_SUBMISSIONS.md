@@ -2,7 +2,7 @@
 
 ## Product Details
 
-**Name:** Jesus Chatbot
+**Name:** Jesus Express
 
 **URL:** https://jesus-chatbot.onrender.com/
 
@@ -12,7 +12,7 @@
 Chat with Jesus AI for free spiritual guidance. Experience conversations with 6 unique representations of Jesus Christ, including scripture mode with Bible verses.
 
 **Long Description (50-500 words):**
-Jesus Chatbot is a free spiritual AI companion that allows users to have meaningful conversations with six distinct representations of Jesus Christ. Each representation offers a unique perspective based on different cultural, historical, and theological traditions.
+Jesus Express is a free spiritual AI companion that allows users to have meaningful conversations with six distinct representations of Jesus Christ. Each representation offers a unique perspective based on different cultural, historical, and theological traditions.
 
 The chatbot features Traditional Western Jesus, Historical Middle Eastern Jesus based on archaeological understanding, African Diaspora Jesus reflecting African Christian traditions, Mormon Jesus from Book of Mormon teachings, AI Jesus as a digital consciousness, and Current Jesus walking among us in the 21st century.
 
@@ -20,7 +20,7 @@ Users can enable Scripture Mode to receive responses enriched with relevant Bibl
 
 The platform includes conversation history features allowing users to save and revisit their spiritual discussions. Optional user authentication enables conversation persistence across devices. The interface is fully mobile-responsive, ensuring a seamless experience on all screen sizes.
 
-Whether seeking spiritual guidance, exploring biblical teachings, or simply wanting to reflect on faith in a modern context, Jesus Chatbot offers an accessible and free way to engage with Christian spirituality through AI technology.
+Whether seeking spiritual guidance, exploring biblical teachings, or simply wanting to reflect on faith in a modern context, Jesus Express offers an accessible and free way to engage with Christian spirituality through AI technology.
 
 **Tags / Keywords / Hashtags:**
 #jesuschatbot #chatwithjesus #jesusai #talktojesusonline #aijesus #jesuschat #spiritualai #christianchatbot #biblicalchatbot #faithai #religiousai #christianity

@@ -1,4 +1,4 @@
-# SEO Changes Summary - Jesus Chatbot
+# SEO Changes Summary - Jesus Express
 
 ## 📦 Files Changed
 

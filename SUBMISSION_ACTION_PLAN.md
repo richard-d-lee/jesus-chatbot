@@ -97,8 +97,8 @@ These submissions will create backlinks and drive traffic:
 1. "How AI Can Enhance Your Spiritual Journey"
 2. "The Different Cultural Representations of Jesus Christ"
 3. "Using AI for Biblical Study and Reflection"
-4. "Frequently Asked Questions About Jesus Chatbot"
-5. "The Technology Behind Jesus Chatbot"
+4. "Frequently Asked Questions About Jesus Express"
+5. "The Technology Behind Jesus Express"
 
 **Where to Publish:**
 - Add a blog section to your site

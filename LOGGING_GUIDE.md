@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Jesus Chatbot now includes a comprehensive logging system that tracks all user interactions with the following features:
+The Jesus Express now includes a comprehensive logging system that tracks all user interactions with the following features:
 
 - **User Questions & Answers**: Records every conversation
 - **Location Tracking**: Captures user location based on IP address (country, region, city, coordinates)

@@ -78,7 +78,7 @@ Visit these URLs and verify they work:
 - ARIA accessibility labels
 
 ### On-Page SEO ✅
-- Keyword-optimized title: "Jesus Chatbot - Chat with Jesus AI | Talk to Jesus Online Free"
+- Keyword-optimized title: "Jesus Express - Chat with Jesus AI | Talk to Jesus Online Free"
 - Compelling meta description (155 chars)
 - Comprehensive meta keywords
 - Hidden SEO content (500+ words)
@@ -277,7 +277,7 @@ A: Check if indexed (search: site:yourdomain.com), build backlinks
 
 ## 🎉 You're Ready!
 
-Your Jesus Chatbot now has **professional-grade SEO** that rivals major competitors. 
+Your Jesus Express now has **professional-grade SEO** that rivals major competitors. 
 
 **Next step:** Push to GitHub and submit to Google Search Console!
 
