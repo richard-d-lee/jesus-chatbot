@@ -205,7 +205,15 @@ class JesusChatbot {
         this.showTypingIndicator();
         
         try {
-            // Send to backend (no api_key parameter - server will use its own)
+            // Build conversation history for context (limit to last 10 exchanges)
+            const history = this.conversations[this.currentRepresentation]
+                .slice(-20)  // Last 20 messages (10 back-and-forth exchanges)
+                .map(msg => ({
+                    role: msg.sender === 'user' ? 'user' : 'assistant',
+                    content: msg.content
+                }));
+
+            // Send to backend with conversation history
             const response = await fetch('/api/chatbot/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -213,7 +221,8 @@ class JesusChatbot {
                     message: message,
                     representation: this.currentRepresentation,
                     scripture_mode: this.scriptureMode,
-                    bible_version: this.bibleVersion
+                    bible_version: this.bibleVersion,
+                    conversation_history: history
                 })
             });
             

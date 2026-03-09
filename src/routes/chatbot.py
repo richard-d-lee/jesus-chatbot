@@ -16,6 +16,10 @@ if OPENAI_API_KEY:
 else:
     print("[WARNING] OPENAI_API_KEY environment variable is not set")
 
+# Maximum number of conversation history messages to include (10 exchanges = 20 messages)
+MAX_HISTORY_MESSAGES = 20
+
+
 @chatbot_bp.route('/chat', methods=['POST'])
 def chat():
     try:
@@ -24,10 +28,11 @@ def chat():
         representation = data.get('representation', 'current')
         scripture_mode = data.get('scripture_mode', False)
         bible_version = data.get('bible_version', 'kjv')
-        
+        conversation_history = data.get('conversation_history', [])
+
         if not message:
             return jsonify({'success': False, 'message': 'No message provided'})
-        
+
         # System prompts for each representation
         system_prompts = {
             'traditional': get_traditional_prompt(scripture_mode, bible_version),
@@ -37,16 +42,35 @@ def chat():
             'ai': get_ai_prompt(scripture_mode, bible_version),
             'current': get_current_prompt(scripture_mode, bible_version)
         }
-        
+
         system_prompt = system_prompts.get(representation, system_prompts['current'])
-        
+
+        # Build messages array with conversation history
+        messages = [{'role': 'system', 'content': system_prompt}]
+
+        # Add conversation history (limited to prevent token overflow)
+        if conversation_history:
+            # Limit history and validate format
+            limited_history = conversation_history[-MAX_HISTORY_MESSAGES:]
+            for msg in limited_history:
+                if isinstance(msg, dict) and 'role' in msg and 'content' in msg:
+                    # Only allow user and assistant roles
+                    if msg['role'] in ('user', 'assistant'):
+                        messages.append({
+                            'role': msg['role'],
+                            'content': str(msg['content'])[:2000]  # Limit message length
+                        })
+
+        # Add current user message
+        messages.append({'role': 'user', 'content': message})
+
         # Use OpenAI API
         try:
             # Ensure API key is not None or empty
             if not OPENAI_API_KEY or OPENAI_API_KEY.strip() == '':
                 raise Exception("OpenAI API key is not set")
-            
-            print(f"[DEBUG] Making OpenAI request with key: {OPENAI_API_KEY[:20]}...")
+
+            print(f"[DEBUG] Making OpenAI request with {len(messages)} messages")
             response = requests.post(
                 'https://api.openai.com/v1/chat/completions',
                 headers={
@@ -55,10 +79,7 @@ def chat():
                 },
                 json={
                     'model': 'gpt-4o-mini',
-                    'messages': [
-                        {'role': 'system', 'content': system_prompt},
-                        {'role': 'user', 'content': message}
-                    ],
+                    'messages': messages,
                     'max_tokens': 500,
                     'temperature': 0.7
                 },
