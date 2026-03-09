@@ -8,6 +8,7 @@ from flask import Flask, send_from_directory
 from flask_cors import CORS
 from src.models.user import db
 from src.models.chat_log import ChatLog
+from src.models.user_location import UserLocation
 from src.routes.user import user_bp
 from src.routes.chatbot import chatbot_bp
 from src.routes.auth import auth_bp

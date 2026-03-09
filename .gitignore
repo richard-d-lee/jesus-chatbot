@@ -27,3 +27,5 @@ instance/
 # OS
 .DS_Store
 Thumbs.db
+admin_dashboard.html
+admin_map.html

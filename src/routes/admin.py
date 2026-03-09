@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, request
 from src.models.chat_log import ChatLog
 from src.models.user import db
+from src.models.user_location import UserLocation
 from datetime import datetime, timedelta
 from functools import wraps
 import os
@@ -132,13 +133,55 @@ def cleanup_old_logs():
     """
     try:
         deleted_count = ChatLog.delete_old_logs()
-        
+
         return jsonify({
             'success': True,
             'message': f'Deleted {deleted_count} old log entries',
             'deleted_count': deleted_count
         })
-    
+
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'message': str(e)
+        }), 500
+
+
+@admin_bp.route('/locations', methods=['GET'])
+def get_locations():
+    """
+    Get all unique user locations for the map.
+    This data persists even after chat logs are cleaned up.
+    """
+    try:
+        locations = UserLocation.get_all_locations()
+
+        return jsonify({
+            'success': True,
+            'count': len(locations),
+            'locations': [loc.to_dict() for loc in locations]
+        })
+
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'message': str(e)
+        }), 500
+
+
+@admin_bp.route('/locations/stats', methods=['GET'])
+def get_location_stats():
+    """
+    Get statistics about user locations.
+    """
+    try:
+        stats = UserLocation.get_location_stats()
+
+        return jsonify({
+            'success': True,
+            'stats': stats
+        })
+
     except Exception as e:
         return jsonify({
             'success': False,

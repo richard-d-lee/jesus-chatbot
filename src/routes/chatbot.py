@@ -4,6 +4,7 @@ import json
 import os
 from src.models.chat_log import ChatLog
 from src.models.user import db
+from src.models.user_location import UserLocation
 from src.utils.geolocation import get_client_ip, get_location_from_ip
 
 chatbot_bp = Blueprint('chatbot', __name__)
@@ -255,12 +256,13 @@ def get_fallback_response(representation, message, scripture_mode, bible_version
 def log_chat_interaction(user_message, bot_response, representation, scripture_mode, bible_version, response_source):
     """
     Log a chat interaction to the database with location data.
+    Also records to persistent location tracking for the admin map.
     """
     try:
         # Get client IP and location
         ip_address = get_client_ip()
         location_data = get_location_from_ip(ip_address)
-        
+
         # Create log entry
         chat_log = ChatLog(
             user_message=user_message,
@@ -276,12 +278,15 @@ def log_chat_interaction(user_message, bot_response, representation, scripture_m
             longitude=location_data.get('longitude'),
             response_source=response_source
         )
-        
+
         db.session.add(chat_log)
         db.session.commit()
-        
+
+        # Also record to persistent location tracking (for admin map)
+        UserLocation.record_location(ip_address, location_data)
+
         print(f"[LOG] Chat logged: {representation} from {location_data.get('city', 'Unknown')}, {location_data.get('country', 'Unknown')}")
-    
+
     except Exception as e:
         print(f"[ERROR] Failed to log chat interaction: {e}")
         # Don't fail the request if logging fails
