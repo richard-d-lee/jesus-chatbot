@@ -3,43 +3,11 @@ from src.models.chat_log import ChatLog
 from src.models.user import db
 from src.models.user_location import UserLocation
 from datetime import datetime, timedelta
-from functools import wraps
-import os
 
 admin_bp = Blueprint('admin', __name__)
 
-def require_admin_key(f):
-    """
-    Decorator to require API key authentication for admin endpoints.
-    API key should be passed in the X-Admin-Key header.
-    """
-    @wraps(f)
-    def decorated_function(*args, **kwargs):
-        # Get API key from header
-        provided_key = request.headers.get('X-Admin-Key')
-        
-        # Get expected key from environment variable
-        expected_key = os.environ.get('ADMIN_API_KEY')
-        
-        # If no key is set in environment, deny access
-        if not expected_key:
-            return jsonify({
-                'success': False,
-                'message': 'Admin API is not configured. Please set ADMIN_API_KEY environment variable.'
-            }), 500
-        
-        # Check if provided key matches
-        if not provided_key or provided_key != expected_key:
-            return jsonify({
-                'success': False,
-                'message': 'Unauthorized. Please provide valid X-Admin-Key header.'
-            }), 401
-        
-        return f(*args, **kwargs)
-    return decorated_function
 
 @admin_bp.route('/logs', methods=['GET'])
-@require_admin_key
 def get_logs():
     """
     Get chat logs with optional filtering.
@@ -72,7 +40,6 @@ def get_logs():
         }), 500
 
 @admin_bp.route('/logs/stats', methods=['GET'])
-@require_admin_key
 def get_log_stats():
     """
     Get statistics about chat logs for the past week.
@@ -125,7 +92,6 @@ def get_log_stats():
         }), 500
 
 @admin_bp.route('/logs/cleanup', methods=['POST'])
-@require_admin_key
 def cleanup_old_logs():
     """
     Manually trigger cleanup of logs older than 7 days.
