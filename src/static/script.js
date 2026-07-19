@@ -261,6 +261,74 @@ const TITLE_MAP = {
     current: 'Current Jesus'
 };
 
+// Localized persona names and card descriptions for the representation picker
+const PERSONA_I18N = {
+    en: {
+        traditional: { name: 'Traditional Western Jesus', desc: 'The classic portrayal with flowing robes and gentle demeanor' },
+        historical: { name: 'Historical Middle Eastern Jesus', desc: 'Based on historical and archaeological understanding' },
+        african: { name: 'African Diaspora Jesus', desc: 'Reflecting the African Christian tradition and experience' },
+        mormon: { name: 'Mormon Jesus', desc: 'Jesus as portrayed in the Book of Mormon tradition' },
+        ai: { name: 'AI Jesus', desc: 'A futuristic, digital consciousness interpretation' },
+        current: { name: 'Current Jesus', desc: 'Jesus walking among us today in the 21st century' }
+    },
+    es: {
+        traditional: { name: 'Jesús Occidental Tradicional', desc: 'La representación clásica con túnicas fluidas y semblante apacible' },
+        historical: { name: 'Jesús Histórico de Oriente Medio', desc: 'Basado en el conocimiento histórico y arqueológico' },
+        african: { name: 'Jesús de la Diáspora Africana', desc: 'Refleja la tradición y experiencia cristiana africana' },
+        mormon: { name: 'Jesús Mormón', desc: 'Jesús según la tradición del Libro de Mormón' },
+        ai: { name: 'Jesús IA', desc: 'Una interpretación futurista de conciencia digital' },
+        current: { name: 'Jesús Actual', desc: 'Jesús caminando entre nosotros hoy, en el siglo XXI' }
+    },
+    pt: {
+        traditional: { name: 'Jesus Ocidental Tradicional', desc: 'A representação clássica com túnicas fluidas e semblante gentil' },
+        historical: { name: 'Jesus Histórico do Oriente Médio', desc: 'Baseado no conhecimento histórico e arqueológico' },
+        african: { name: 'Jesus da Diáspora Africana', desc: 'Refletindo a tradição e experiência cristã africana' },
+        mormon: { name: 'Jesus Mórmon', desc: 'Jesus conforme retratado na tradição do Livro de Mórmon' },
+        ai: { name: 'Jesus IA', desc: 'Uma interpretação futurista de consciência digital' },
+        current: { name: 'Jesus Atual', desc: 'Jesus caminhando entre nós hoje, no século XXI' }
+    },
+    de: {
+        traditional: { name: 'Traditioneller westlicher Jesus', desc: 'Die klassische Darstellung mit fließenden Gewändern und sanftem Wesen' },
+        historical: { name: 'Historischer Jesus aus dem Nahen Osten', desc: 'Basierend auf historischen und archäologischen Erkenntnissen' },
+        african: { name: 'Jesus der afrikanischen Diaspora', desc: 'Spiegelt die afrikanische christliche Tradition und Erfahrung wider' },
+        mormon: { name: 'Mormonischer Jesus', desc: 'Jesus, wie ihn die Tradition des Buches Mormon darstellt' },
+        ai: { name: 'KI-Jesus', desc: 'Eine futuristische Interpretation digitalen Bewusstseins' },
+        current: { name: 'Heutiger Jesus', desc: 'Jesus, der heute im 21. Jahrhundert unter uns wandelt' }
+    },
+    fr: {
+        traditional: { name: 'Jésus occidental traditionnel', desc: 'La représentation classique aux robes fluides et au visage doux' },
+        historical: { name: 'Jésus historique du Moyen-Orient', desc: 'Fondé sur les connaissances historiques et archéologiques' },
+        african: { name: 'Jésus de la diaspora africaine', desc: "Reflet de la tradition et de l'expérience chrétiennes africaines" },
+        mormon: { name: 'Jésus mormon', desc: 'Jésus tel que le dépeint la tradition du Livre de Mormon' },
+        ai: { name: 'Jésus IA', desc: 'Une interprétation futuriste de la conscience numérique' },
+        current: { name: 'Jésus actuel', desc: "Jésus marchant parmi nous aujourd'hui, au XXIe siècle" }
+    },
+    hi: {
+        traditional: { name: 'पारंपरिक पश्चिमी यीशु', desc: 'बहते वस्त्रों और सौम्य स्वभाव वाला क्लासिक चित्रण' },
+        historical: { name: 'ऐतिहासिक मध्य-पूर्वी यीशु', desc: 'ऐतिहासिक और पुरातात्विक समझ पर आधारित' },
+        african: { name: 'अफ़्रीकी डायस्पोरा यीशु', desc: 'अफ़्रीकी ईसाई परंपरा और अनुभव को दर्शाते हुए' },
+        mormon: { name: 'मॉर्मन यीशु', desc: 'मॉर्मन की पुस्तक की परंपरा के अनुसार यीशु' },
+        ai: { name: 'एआई यीशु', desc: 'डिजिटल चेतना की एक भविष्यवादी व्याख्या' },
+        current: { name: 'वर्तमान यीशु', desc: 'इक्कीसवीं सदी में आज हमारे बीच चलते यीशु' }
+    },
+    tl: {
+        traditional: { name: 'Tradisyonal na Kanluraning Hesus', desc: 'Ang klasikong paglalarawan na may maluwag na damit at mahinahong anyo' },
+        historical: { name: 'Makasaysayang Hesus ng Gitnang Silangan', desc: 'Batay sa makasaysayan at arkeolohikal na pag-unawa' },
+        african: { name: 'Hesus ng African Diaspora', desc: 'Sumasalamin sa tradisyon at karanasang Kristiyanong Aprikano' },
+        mormon: { name: 'Mormon na Hesus', desc: 'Si Hesus ayon sa tradisyon ng Aklat ni Mormon' },
+        ai: { name: 'AI na Hesus', desc: 'Isang futuristikong interpretasyon ng digital na kamalayan' },
+        current: { name: 'Kasalukuyang Hesus', desc: 'Si Hesus na naglalakad kasama natin ngayon, sa ika-21 siglo' }
+    },
+    nl: {
+        traditional: { name: 'Traditionele westerse Jezus', desc: 'De klassieke weergave met wijde gewaden en zachtaardige uitstraling' },
+        historical: { name: 'Historische Jezus uit het Midden-Oosten', desc: 'Gebaseerd op historisch en archeologisch inzicht' },
+        african: { name: 'Jezus van de Afrikaanse diaspora', desc: 'Weerspiegelt de Afrikaanse christelijke traditie en ervaring' },
+        mormon: { name: 'Mormoonse Jezus', desc: 'Jezus zoals afgebeeld in de traditie van het Boek van Mormon' },
+        ai: { name: 'AI-Jezus', desc: 'Een futuristische interpretatie van digitaal bewustzijn' },
+        current: { name: 'Hedendaagse Jezus', desc: 'Jezus die vandaag onder ons wandelt, in de 21e eeuw' }
+    }
+};
+
 class JesusChatbot {
     constructor() {
         this.currentRepresentation = 'current';
@@ -292,6 +360,10 @@ class JesusChatbot {
 
     t(key) {
         return (I18N[this.language] || I18N.en)[key];
+    }
+
+    personas() {
+        return PERSONA_I18N[this.language] || PERSONA_I18N.en;
     }
 
     init() {
@@ -468,8 +540,20 @@ class JesusChatbot {
         document.getElementById('selectRepresentationBtn').textContent = this.t('selectRepresentation');
         document.getElementById('representationTitle').textContent = this.t('chooseYourJesus');
         document.querySelector('.modal-description').textContent = this.t('chooseDesc');
+
+        // Localize the representation picker cards
+        const personas = this.personas();
+        document.querySelectorAll('.representation-card').forEach(card => {
+            const info = personas[card.dataset.representation];
+            if (!info) return;
+            card.querySelector('h3').textContent = info.name;
+            card.querySelector('p').textContent = info.desc;
+            card.querySelector('img').alt = info.name;
+        });
+
         this.renderChips();
         this.updatePersonaHint();
+        this.updateJesusImage();
     }
 
     renderChips() {
@@ -520,9 +604,10 @@ class JesusChatbot {
 
     updateJesusImage() {
         const jesusImage = document.getElementById('headerJesusImage');
+        const name = this.personas()[this.currentRepresentation].name;
         jesusImage.src = IMAGE_MAP[this.currentRepresentation];
-        jesusImage.title = TITLE_MAP[this.currentRepresentation];
-        jesusImage.alt = TITLE_MAP[this.currentRepresentation];
+        jesusImage.title = name;
+        jesusImage.alt = name;
     }
 
     initialMessage() {
