@@ -51,7 +51,7 @@
     <link rel="apple-touch-icon" href="cross-favicon.png">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=4">
+    <link rel="stylesheet" href="styles.css?v=5">
     
     <!-- Structured Data - Organization Schema -->
     <script type="application/ld+json">
@@ -173,16 +173,23 @@
             <!-- Right side: Language + Donate + Settings buttons -->
             <div class="header-right">
                 <!-- Language Switcher -->
-                <select id="languageSelectHeader" class="lang-select-header" aria-label="Select language" title="Language">
-                    <option value="en">EN</option>
-                    <option value="es">ES</option>
-                    <option value="pt">PT</option>
-                    <option value="de">DE</option>
-                    <option value="fr">FR</option>
-                    <option value="hi">हिं</option>
-                    <option value="tl">TL</option>
-                    <option value="nl">NL</option>
-                </select>
+                <label class="lang-wrap" title="Language">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <select id="languageSelectHeader" aria-label="Select language">
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                        <option value="pt">PT</option>
+                        <option value="de">DE</option>
+                        <option value="fr">FR</option>
+                        <option value="hi">हिं</option>
+                        <option value="tl">TL</option>
+                        <option value="nl">NL</option>
+                    </select>
+                </label>
                 <!-- Donate Button -->
                 <a href="https://buymeacoffee.com/jesusexpress" 
                    target="_blank" 
@@ -224,7 +231,7 @@
 
         <nav class="persona-strip-wrap" aria-label="Choose a Jesus representation">
             <div class="persona-strip" id="personaStrip"></div>
-            <p class="persona-hint" id="personaHint" hidden></p>
+            <p class="persona-caption" id="personaHint"></p>
         </nav>
 
         <main class="chat-container" id="chat">
@@ -405,6 +412,6 @@
         </section>
     </div>
 
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=5"></script>
 </body>
 </html>

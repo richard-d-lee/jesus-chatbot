@@ -342,20 +342,22 @@ class JesusChatbot {
     }
 
     updatePersonaHint() {
-        const hint = document.getElementById('personaHint');
-        if (!hint) return;
+        // Caption line under the strip: shows a one-time hint for new
+        // visitors, then the active persona's name forever after.
+        const caption = document.getElementById('personaHint');
+        if (!caption) return;
         if (localStorage.getItem('personaHintDismissed')) {
-            hint.hidden = true;
+            caption.classList.remove('is-hint');
+            caption.textContent = TITLE_MAP[this.currentRepresentation];
         } else {
-            hint.textContent = this.t('personaHint');
-            hint.hidden = false;
+            caption.classList.add('is-hint');
+            caption.textContent = this.t('personaHint');
         }
     }
 
     dismissPersonaHint() {
         try { localStorage.setItem('personaHintDismissed', '1'); } catch {}
-        const hint = document.getElementById('personaHint');
-        if (hint) hint.hidden = true;
+        this.updatePersonaHint();
     }
 
     // ------------------------------------------------------------------
@@ -531,6 +533,7 @@ class JesusChatbot {
             card.classList.toggle('active', card.dataset.representation === representation);
         });
         this.updatePersonaStripActive();
+        this.updatePersonaHint();
         this.updateJesusImage();
         this.renderConversation();
         this.hideRepresentationModal();
