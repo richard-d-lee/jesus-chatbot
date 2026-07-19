@@ -19,6 +19,7 @@ const I18N = {
         chooseDesc: "Select which representation of Jesus you'd like to speak with",
         errorMessage: 'I apologize, but I encountered an error. Please try again.',
         connectionError: 'I apologize, but I encountered an error connecting. Please try again.',
+        personaHint: 'Tap a face to talk with a different Jesus',
         chips: [
             "I'm feeling anxious",
             'Pray with me',
@@ -39,6 +40,7 @@ const I18N = {
         chooseDesc: 'Selecciona con qué representación de Jesús te gustaría hablar',
         errorMessage: 'Lo siento, ocurrió un error. Por favor, inténtalo de nuevo.',
         connectionError: 'Lo siento, hubo un error de conexión. Por favor, inténtalo de nuevo.',
+        personaHint: 'Toca un rostro para hablar con un Jesús diferente',
         chips: [
             'Me siento ansioso',
             'Ora conmigo',
@@ -59,6 +61,7 @@ const I18N = {
         chooseDesc: 'Selecione com qual representação de Jesus você gostaria de falar',
         errorMessage: 'Desculpe, ocorreu um erro. Por favor, tente novamente.',
         connectionError: 'Desculpe, houve um erro de conexão. Por favor, tente novamente.',
+        personaHint: 'Toque em um rosto para falar com um Jesus diferente',
         chips: [
             'Estou me sentindo ansioso',
             'Ore comigo',
@@ -143,10 +146,66 @@ class JesusChatbot {
 
     init() {
         this.setupEventListeners();
+        this.renderPersonaStrip();
         this.applyLanguage();
         this.updateJesusImage();
         this.syncSettingsUI();
         this.renderConversation();
+    }
+
+    // ------------------------------------------------------------------
+    // Persona strip (always-visible representation switcher)
+    // ------------------------------------------------------------------
+
+    renderPersonaStrip() {
+        const strip = document.getElementById('personaStrip');
+        if (!strip) return;
+        strip.innerHTML = '';
+        for (const key of Object.keys(IMAGE_MAP)) {
+            const btn = document.createElement('button');
+            btn.className = 'persona-avatar' + (key === this.currentRepresentation ? ' active' : '');
+            btn.type = 'button';
+            btn.dataset.representation = key;
+            btn.title = TITLE_MAP[key];
+            btn.setAttribute('aria-label', `Switch to ${TITLE_MAP[key]}`);
+
+            const img = document.createElement('img');
+            img.src = IMAGE_MAP[key];
+            img.alt = TITLE_MAP[key];
+            img.width = 44;
+            img.height = 44;
+            btn.appendChild(img);
+
+            btn.addEventListener('click', () => {
+                this.dismissPersonaHint();
+                this.selectRepresentation(key);
+            });
+            strip.appendChild(btn);
+        }
+        this.updatePersonaHint();
+    }
+
+    updatePersonaStripActive() {
+        document.querySelectorAll('.persona-avatar').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.representation === this.currentRepresentation);
+        });
+    }
+
+    updatePersonaHint() {
+        const hint = document.getElementById('personaHint');
+        if (!hint) return;
+        if (localStorage.getItem('personaHintDismissed')) {
+            hint.hidden = true;
+        } else {
+            hint.textContent = this.t('personaHint');
+            hint.hidden = false;
+        }
+    }
+
+    dismissPersonaHint() {
+        try { localStorage.setItem('personaHintDismissed', '1'); } catch {}
+        const hint = document.getElementById('personaHint');
+        if (hint) hint.hidden = true;
     }
 
     // ------------------------------------------------------------------
@@ -260,6 +319,7 @@ class JesusChatbot {
         document.getElementById('representationTitle').textContent = this.t('chooseYourJesus');
         document.querySelector('.modal-description').textContent = this.t('chooseDesc');
         this.renderChips();
+        this.updatePersonaHint();
     }
 
     renderChips() {
@@ -301,6 +361,7 @@ class JesusChatbot {
         document.querySelectorAll('.representation-card').forEach(card => {
             card.classList.toggle('active', card.dataset.representation === representation);
         });
+        this.updatePersonaStripActive();
         this.updateJesusImage();
         this.renderConversation();
         this.hideRepresentationModal();
