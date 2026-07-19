@@ -296,68 +296,47 @@ class JesusChatbot {
 
     init() {
         this.setupEventListeners();
-        this.renderPersonaStrip();
         this.applyLanguage();
         this.updateJesusImage();
         this.syncSettingsUI();
         this.renderConversation();
+        this.initPersonaTooltip();
     }
 
     // ------------------------------------------------------------------
-    // Persona strip (always-visible representation switcher)
+    // Persona tooltip: a one-time dismissible nudge on the header avatar
+    // telling new visitors they can switch representations.
     // ------------------------------------------------------------------
 
-    renderPersonaStrip() {
-        const strip = document.getElementById('personaStrip');
-        if (!strip) return;
-        strip.innerHTML = '';
-        for (const key of Object.keys(IMAGE_MAP)) {
-            const btn = document.createElement('button');
-            btn.className = 'persona-avatar' + (key === this.currentRepresentation ? ' active' : '');
-            btn.type = 'button';
-            btn.dataset.representation = key;
-            btn.title = TITLE_MAP[key];
-            btn.setAttribute('aria-label', `Switch to ${TITLE_MAP[key]}`);
+    initPersonaTooltip() {
+        if (localStorage.getItem('personaHintDismissed')) return;
+        const tooltip = document.getElementById('personaTooltip');
+        if (!tooltip) return;
 
-            const img = document.createElement('img');
-            img.src = IMAGE_MAP[key];
-            img.alt = TITLE_MAP[key];
-            img.width = 44;
-            img.height = 44;
-            btn.appendChild(img);
-
-            btn.addEventListener('click', () => {
-                this.dismissPersonaHint();
-                this.selectRepresentation(key);
-            });
-            strip.appendChild(btn);
-        }
-        this.updatePersonaHint();
-    }
-
-    updatePersonaStripActive() {
-        document.querySelectorAll('.persona-avatar').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.representation === this.currentRepresentation);
+        document.getElementById('personaTooltipClose').addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.dismissPersonaHint();
         });
+
+        // Appear gently after the page settles
+        setTimeout(() => {
+            if (!localStorage.getItem('personaHintDismissed')) {
+                tooltip.hidden = false;
+                document.getElementById('headerJesusImage').classList.add('pulse');
+            }
+        }, 1200);
     }
 
     updatePersonaHint() {
-        // Caption line under the strip: shows a one-time hint for new
-        // visitors, then the active persona's name forever after.
-        const caption = document.getElementById('personaHint');
-        if (!caption) return;
-        if (localStorage.getItem('personaHintDismissed')) {
-            caption.classList.remove('is-hint');
-            caption.textContent = TITLE_MAP[this.currentRepresentation];
-        } else {
-            caption.classList.add('is-hint');
-            caption.textContent = this.t('personaHint');
-        }
+        const text = document.getElementById('personaTooltipText');
+        if (text) text.textContent = this.t('personaHint');
     }
 
     dismissPersonaHint() {
         try { localStorage.setItem('personaHintDismissed', '1'); } catch {}
-        this.updatePersonaHint();
+        const tooltip = document.getElementById('personaTooltip');
+        if (tooltip) tooltip.hidden = true;
+        document.getElementById('headerJesusImage').classList.remove('pulse');
     }
 
     // ------------------------------------------------------------------
@@ -522,6 +501,7 @@ class JesusChatbot {
     showSettingsModal() { document.getElementById('settingsModal').style.display = 'block'; }
     hideSettingsModal() { document.getElementById('settingsModal').style.display = 'none'; }
     showRepresentationModal() {
+        this.dismissPersonaHint();
         this.hideSettingsModal();
         document.getElementById('representationModal').style.display = 'block';
     }
@@ -532,8 +512,6 @@ class JesusChatbot {
         document.querySelectorAll('.representation-card').forEach(card => {
             card.classList.toggle('active', card.dataset.representation === representation);
         });
-        this.updatePersonaStripActive();
-        this.updatePersonaHint();
         this.updateJesusImage();
         this.renderConversation();
         this.hideRepresentationModal();

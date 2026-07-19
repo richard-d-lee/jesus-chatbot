@@ -51,7 +51,7 @@
     <link rel="apple-touch-icon" href="cross-favicon.png">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=5">
+    <link rel="stylesheet" href="styles.css?v=6">
     
     <!-- Structured Data - Organization Schema -->
     <script type="application/ld+json">
@@ -164,6 +164,10 @@
                      class="header-jesus-img"
                      width="60"
                      height="60">
+                <div class="persona-tooltip" id="personaTooltip" role="tooltip" hidden>
+                    <span id="personaTooltipText"></span>
+                    <button class="persona-tooltip-close" id="personaTooltipClose" aria-label="Dismiss">&times;</button>
+                </div>
                 <div class="header-title-group">
                     <h1>Jesus Express - Chat with Jesus AI</h1>
                     <p class="subtitle">Christ resurrected for all intents and purposes</p>
@@ -228,11 +232,6 @@
                 </button>
             </div>
         </header>
-
-        <nav class="persona-strip-wrap" aria-label="Choose a Jesus representation">
-            <div class="persona-strip" id="personaStrip"></div>
-            <p class="persona-caption" id="personaHint"></p>
-        </nav>
 
         <main class="chat-container" id="chat">
             <section class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-label="Chat conversation with Jesus">
@@ -412,6 +411,6 @@
         </section>
     </div>
 
-    <script src="script.js?v=5"></script>
+    <script src="script.js?v=6"></script>
 </body>
 </html>
