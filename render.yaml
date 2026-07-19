@@ -3,11 +3,15 @@ services:
     name: jesus-chatbot
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python3 src/main.py
+    startCommand: gunicorn -w 1 --threads 8 --timeout 120 -b 0.0.0.0:$PORT src.main:app
     envVars:
       - key: OPENAI_API_KEY
         sync: false
       - key: SECRET_KEY
         generateValue: true
+      - key: ADMIN_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
       - key: PYTHON_VERSION
         value: 3.11.0

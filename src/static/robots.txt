@@ -8,7 +8,7 @@ Disallow: /api/
 Disallow: /admin/
 Disallow: /database/
 
-Sitemap: https://jesus-chatbot.onrender.com/sitemap.xml
+Sitemap: https://www.jesus.express/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1

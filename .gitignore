@@ -27,5 +27,7 @@ instance/
 # OS
 .DS_Store
 Thumbs.db
-admin_dashboard.html
-admin_map.html
+
+
+# Local data exports (never commit user data)
+db_backups/

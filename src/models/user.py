@@ -1,6 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import hashlib
+from werkzeug.security import generate_password_hash, check_password_hash
 
 db = SQLAlchemy()
 
@@ -8,15 +9,23 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password_hash = db.Column(db.String(128), nullable=False)
+    password_hash = db.Column(db.String(255), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    
+
     def set_password(self, password):
-        self.password_hash = hashlib.sha256(password.encode()).hexdigest()
-    
+        self.password_hash = generate_password_hash(password)
+
     def check_password(self, password):
-        return self.password_hash == hashlib.sha256(password.encode()).hexdigest()
-    
+        # Legacy accounts were stored as unsalted SHA-256 (64 hex chars).
+        # Verify those, then transparently upgrade to a salted hash.
+        if len(self.password_hash) == 64 and '$' not in self.password_hash:
+            if self.password_hash == hashlib.sha256(password.encode()).hexdigest():
+                self.set_password(password)
+                db.session.commit()
+                return True
+            return False
+        return check_password_hash(self.password_hash, password)
+
     def to_dict(self):
         return {
             'id': self.id,
@@ -32,4 +41,3 @@ class Conversation(db.Model):
     messages = db.Column(db.Text, nullable=False)  # JSON string
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
-

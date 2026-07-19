@@ -1,37 +1,45 @@
-from flask_sqlalchemy import SQLAlchemy
+import hashlib
 from datetime import datetime, timedelta
 from src.models.user import db
 
 class ChatLog(db.Model):
     """Model for tracking all chat interactions with user location data"""
     __tablename__ = 'chat_logs'
-    
+
     id = db.Column(db.Integer, primary_key=True)
-    
+
     # User information (nullable for anonymous users)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
-    
+
     # Chat details
     representation = db.Column(db.String(50), nullable=False)  # which Jesus representation
     user_message = db.Column(db.Text, nullable=False)  # user's question
     bot_response = db.Column(db.Text, nullable=False)  # Jesus's answer
-    
+
     # Scripture mode settings
     scripture_mode = db.Column(db.Boolean, default=False)
-    bible_version = db.Column(db.String(10), nullable=True)  # kjv, niv, esv, nrsv
-    
-    # Location data
-    ip_address = db.Column(db.String(45), nullable=True)  # IPv4 or IPv6
+    bible_version = db.Column(db.String(10), nullable=True)  # kjv, niv, esv, nasb, nlt
+
+    # Location data. Only a hash of the IP is stored (privacy), matching the
+    # approach used in UserLocation.
+    ip_address = db.Column(db.String(64), nullable=True)  # sha256 hash of the IP
     country = db.Column(db.String(100), nullable=True)
     region = db.Column(db.String(100), nullable=True)
     city = db.Column(db.String(100), nullable=True)
     latitude = db.Column(db.Float, nullable=True)
     longitude = db.Column(db.Float, nullable=True)
-    
+
     # Metadata
     response_source = db.Column(db.String(20), nullable=True)  # 'openai' or 'fallback'
-    created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
-    
+    created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False, index=True)
+
+    @staticmethod
+    def hash_ip(ip_address):
+        """Hash an IP for privacy-preserving storage."""
+        if not ip_address:
+            return None
+        return hashlib.sha256(ip_address.encode()).hexdigest()
+
     def to_dict(self):
         """Convert log entry to dictionary for API responses"""
         return {
@@ -51,13 +59,13 @@ class ChatLog(db.Model):
             'response_source': self.response_source,
             'created_at': self.created_at.isoformat() if self.created_at else None
         }
-    
+
     @classmethod
     def get_logs_past_week(cls):
         """Get all logs from the past 7 days"""
         one_week_ago = datetime.utcnow() - timedelta(days=7)
         return cls.query.filter(cls.created_at >= one_week_ago).order_by(cls.created_at.desc()).all()
-    
+
     @classmethod
     def delete_old_logs(cls):
         """Delete logs older than 7 days"""
@@ -65,7 +73,7 @@ class ChatLog(db.Model):
         deleted_count = cls.query.filter(cls.created_at < one_week_ago).delete()
         db.session.commit()
         return deleted_count
-    
+
     @classmethod
     def get_all_logs(cls):
         """Get all logs (for admin view)"""

@@ -94,6 +94,58 @@ class UserLocation(db.Model):
             return None
 
     @classmethod
+    def import_records(cls, records):
+        """
+        Import location records previously exported via to_dict().
+        Exported records don't include ip_hash (it's private), so imported rows
+        get a synthetic hash derived from the location itself for deduplication.
+        Returns (imported_count, skipped_count).
+        """
+        imported = 0
+        skipped = 0
+        for rec in records:
+            try:
+                lat = rec.get('latitude')
+                lng = rec.get('longitude')
+                if lat is None or lng is None:
+                    skipped += 1
+                    continue
+
+                synthetic_key = f"import:{rec.get('country')}:{rec.get('city')}:{lat}:{lng}"
+                ip_hash = hashlib.sha256(synthetic_key.encode()).hexdigest()
+
+                if cls.query.filter_by(ip_hash=ip_hash).first():
+                    skipped += 1
+                    continue
+
+                # Also skip if an organically-recorded row already sits at the
+                # same rounded coordinates + city (avoids visual duplicates).
+                if cls.query.filter_by(latitude=lat, longitude=lng, city=rec.get('city')).first():
+                    skipped += 1
+                    continue
+
+                row = cls(
+                    ip_hash=ip_hash,
+                    country=rec.get('country'),
+                    region=rec.get('region'),
+                    city=rec.get('city'),
+                    latitude=lat,
+                    longitude=lng,
+                    visit_count=rec.get('visit_count') or 1
+                )
+                if rec.get('first_seen'):
+                    row.first_seen = datetime.fromisoformat(rec['first_seen'])
+                if rec.get('last_seen'):
+                    row.last_seen = datetime.fromisoformat(rec['last_seen'])
+                db.session.add(row)
+                imported += 1
+            except Exception:
+                db.session.rollback()
+                skipped += 1
+        db.session.commit()
+        return imported, skipped
+
+    @classmethod
     def get_all_locations(cls):
         """Get all unique locations for the map"""
         return cls.query.all()

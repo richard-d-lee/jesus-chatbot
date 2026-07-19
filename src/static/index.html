@@ -22,23 +22,23 @@
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://jesus-chatbot.onrender.com/">
+    <link rel="canonical" href="https://www.jesus.express/">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jesus-chatbot.onrender.com/">
+    <meta property="og:url" content="https://www.jesus.express/">
     <meta property="og:title" content="Jesus Chatbot - Chat with Jesus AI | Talk to Jesus Online">
     <meta property="og:description" content="Experience spiritual guidance through AI conversations with Jesus Christ. Choose from 6 representations including Traditional, Historical, and Modern Jesus.">
-    <meta property="og:image" content="https://jesus-chatbot.onrender.com/images/current_jesus.png">
+    <meta property="og:image" content="https://www.jesus.express/images/og_image.jpg">
     <meta property="og:site_name" content="Jesus Express">
     <meta property="og:locale" content="en_US">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://jesus-chatbot.onrender.com/">
+    <meta name="twitter:url" content="https://www.jesus.express/">
     <meta name="twitter:title" content="Jesus Chatbot - Chat with Jesus AI | Talk to Jesus Online">
     <meta name="twitter:description" content="Experience spiritual guidance through AI conversations with Jesus Christ. Free online Jesus chatbot.">
-    <meta name="twitter:image" content="https://jesus-chatbot.onrender.com/images/current_jesus.png">
+    <meta name="twitter:image" content="https://www.jesus.express/images/og_image.jpg">
     
     <!-- Additional SEO Meta Tags -->
     <meta name="theme-color" content="#4A5568">
@@ -51,7 +51,7 @@
     <link rel="apple-touch-icon" href="cross-favicon.png">
     
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=2">
     
     <!-- Structured Data - Organization Schema -->
     <script type="application/ld+json">
@@ -60,7 +60,7 @@
       "@type": "WebApplication",
       "name": "Jesus Chatbot",
       "alternateName": "Jesus Express",
-      "url": "https://jesus-chatbot.onrender.com/",
+      "url": "https://www.jesus.express/",
       "description": "An AI-powered spiritual companion featuring six distinct representations of Jesus Christ. Chat with Jesus online for spiritual guidance, biblical wisdom, and meaningful conversations.",
       "applicationCategory": "LifestyleApplication",
       "operatingSystem": "Any",
@@ -76,12 +76,7 @@
         "Mobile responsive design",
         "Free spiritual guidance"
       ],
-      "screenshot": "https://jesus-chatbot.onrender.com/images/current_jesus.png",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "127"
-      }
+      "screenshot": "https://www.jesus.express/images/og_image.jpg"
     }
     </script>
     
@@ -145,13 +140,13 @@
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://jesus-chatbot.onrender.com/"
+          "item": "https://www.jesus.express/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Chat with Jesus",
-          "item": "https://jesus-chatbot.onrender.com/#chat"
+          "item": "https://www.jesus.express/#chat"
         }
       ]
     }
@@ -162,8 +157,8 @@
         <header class="header">
             <!-- Left side: Jesus image + Title -->
             <div class="header-left">
-                <img id="headerJesusImage" 
-                     src="images/current_jesus.png" 
+                <img id="headerJesusImage"
+                     src="images/current_jesus.webp"
                      alt="Jesus Christ AI Chatbot - Chat with Jesus Online" 
                      title="Current Jesus - Walking Among Us Today" 
                      class="header-jesus-img"
@@ -223,6 +218,8 @@
                 </article>
             </section>
             
+            <div class="starter-chips" id="starterChips" aria-label="Conversation starters"></div>
+
             <div class="chat-input-container">
                 <label for="messageInput" class="visually-hidden">Type your message to Jesus</label>
                 <textarea id="messageInput" 
@@ -251,13 +248,22 @@
                     <label class="toggle-label">
                         <input type="checkbox" id="scriptureMode" aria-describedby="scriptureModeDesc">
                         <span class="toggle-slider"></span>
-                        Scripture Mode
+                        <span id="scriptureModeLabel">Scripture Mode</span>
                     </label>
                     <p class="setting-description" id="scriptureModeDesc">Include relevant Bible verses in responses</p>
                 </div>
 
                 <div class="settings-section">
-                    <label for="bibleVersion">Bible Version:</label>
+                    <label for="languageSelect" id="languageLabel">Language:</label>
+                    <select id="languageSelect" aria-label="Select language">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="pt">Português</option>
+                    </select>
+                </div>
+
+                <div class="settings-section">
+                    <label for="bibleVersion" id="bibleVersionLabel">Bible Version:</label>
                     <select id="bibleVersion" aria-label="Select Bible version">
                         <option value="KJV">King James Version (KJV)</option>
                         <option value="NIV">New International Version (NIV)</option>
@@ -284,7 +290,7 @@
                 
                 <div class="representation-grid" role="list">
                     <article class="representation-card" data-representation="traditional" role="listitem">
-                        <img src="images/traditional_western_jesus.png" 
+                        <img src="images/traditional_western_jesus.webp" 
                              alt="Traditional Western Jesus - Classic portrayal with flowing robes"
                              width="200"
                              height="200"
@@ -294,7 +300,7 @@
                     </article>
                     
                     <article class="representation-card" data-representation="historical" role="listitem">
-                        <img src="images/historical_middle_eastern_jesus.png" 
+                        <img src="images/historical_middle_eastern_jesus.webp" 
                              alt="Historical Middle Eastern Jesus - Based on archaeological understanding"
                              width="200"
                              height="200"
@@ -304,7 +310,7 @@
                     </article>
                     
                     <article class="representation-card" data-representation="african" role="listitem">
-                        <img src="images/african_diaspora_jesus.png" 
+                        <img src="images/african_diaspora_jesus.webp" 
                              alt="African Diaspora Jesus - Reflecting African Christian tradition"
                              width="200"
                              height="200"
@@ -314,7 +320,7 @@
                     </article>
                     
                     <article class="representation-card" data-representation="mormon" role="listitem">
-                        <img src="images/mormon_jesus.png" 
+                        <img src="images/mormon_jesus.webp" 
                              alt="Mormon Jesus - Book of Mormon tradition"
                              width="200"
                              height="200"
@@ -324,7 +330,7 @@
                     </article>
                     
                     <article class="representation-card" data-representation="ai" role="listitem">
-                        <img src="images/ai_jesus.png" 
+                        <img src="images/ai_jesus.webp" 
                              alt="AI Jesus - Futuristic digital consciousness interpretation"
                              width="200"
                              height="200"
@@ -334,7 +340,7 @@
                     </article>
                     
                     <article class="representation-card active" data-representation="current" role="listitem">
-                        <img src="images/current_jesus.png" 
+                        <img src="images/current_jesus.webp" 
                              alt="Current Jesus - Walking among us in the 21st century"
                              width="200"
                              height="200"
@@ -378,6 +384,6 @@
         </section>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
 </body>
 </html>
