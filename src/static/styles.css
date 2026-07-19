@@ -858,3 +858,32 @@ body {
     color: #8a93a5;
     margin: 6px 0 2px 0;
 }
+
+/* --- v4: header language switcher --- */
+
+.lang-select-header {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 50px;
+    padding: 10px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2c3e50;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.lang-select-header:hover {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 600px) {
+    .lang-select-header {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}

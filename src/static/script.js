@@ -68,6 +68,111 @@ const I18N = {
             'Perdi alguém recentemente',
             'Explique um versículo bíblico para mim'
         ]
+    },
+    de: {
+        subtitle: 'Der auferstandene Christus – für alle Absichten und Zwecke',
+        placeholder: 'Teile deine Gedanken und Fragen oder suche Rat...',
+        settingsTitle: 'Einstellungen',
+        scriptureLabel: 'Bibelvers-Modus',
+        scriptureDesc: 'Relevante Bibelverse in Antworten einfügen',
+        bibleVersionLabel: 'Bibelübersetzung:',
+        languageLabel: 'Sprache:',
+        selectRepresentation: 'Jesus-Darstellung wählen',
+        chooseYourJesus: 'Wähle deinen Jesus',
+        chooseDesc: 'Wähle, mit welcher Darstellung von Jesus du sprechen möchtest',
+        errorMessage: 'Es tut mir leid, es ist ein Fehler aufgetreten. Bitte versuche es erneut.',
+        connectionError: 'Es tut mir leid, es gab einen Verbindungsfehler. Bitte versuche es erneut.',
+        personaHint: 'Tippe auf ein Gesicht, um mit einem anderen Jesus zu sprechen',
+        chips: [
+            'Ich fühle mich ängstlich',
+            'Bete mit mir',
+            'Ich habe kürzlich jemanden verloren',
+            'Erkläre mir einen Bibelvers'
+        ]
+    },
+    fr: {
+        subtitle: 'Le Christ ressuscité à toutes fins utiles',
+        placeholder: 'Partagez vos pensées, vos questions ou cherchez conseil...',
+        settingsTitle: 'Paramètres',
+        scriptureLabel: 'Mode Écritures',
+        scriptureDesc: 'Inclure des versets bibliques pertinents dans les réponses',
+        bibleVersionLabel: 'Version de la Bible :',
+        languageLabel: 'Langue :',
+        selectRepresentation: 'Choisir une représentation de Jésus',
+        chooseYourJesus: 'Choisissez votre Jésus',
+        chooseDesc: 'Choisissez avec quelle représentation de Jésus vous souhaitez parler',
+        errorMessage: "Je suis désolé, une erreur s'est produite. Veuillez réessayer.",
+        connectionError: 'Désolé, une erreur de connexion est survenue. Veuillez réessayer.',
+        personaHint: 'Touchez un visage pour parler avec un autre Jésus',
+        chips: [
+            'Je me sens anxieux',
+            'Prie avec moi',
+            "J'ai perdu quelqu'un récemment",
+            'Explique-moi un verset biblique'
+        ]
+    },
+    hi: {
+        subtitle: 'मसीह पुनर्जीवित — हर अर्थ में',
+        placeholder: 'अपने विचार, प्रश्न साझा करें या मार्गदर्शन पाएं...',
+        settingsTitle: 'सेटिंग्स',
+        scriptureLabel: 'शास्त्र मोड',
+        scriptureDesc: 'उत्तरों में प्रासंगिक बाइबल के वचन शामिल करें',
+        bibleVersionLabel: 'बाइबल संस्करण:',
+        languageLabel: 'भाषा:',
+        selectRepresentation: 'यीशु का रूप चुनें',
+        chooseYourJesus: 'अपने यीशु को चुनें',
+        chooseDesc: 'चुनें कि आप यीशु के किस रूप से बात करना चाहते हैं',
+        errorMessage: 'क्षमा करें, एक त्रुटि हुई। कृपया पुनः प्रयास करें।',
+        connectionError: 'क्षमा करें, कनेक्शन में त्रुटि हुई। कृपया पुनः प्रयास करें।',
+        personaHint: 'किसी दूसरे यीशु से बात करने के लिए चेहरे पर टैप करें',
+        chips: [
+            'मैं चिंतित महसूस कर रहा हूँ',
+            'मेरे साथ प्रार्थना करें',
+            'हाल ही में मैंने किसी को खोया है',
+            'मुझे एक बाइबल वचन समझाएँ'
+        ]
+    },
+    tl: {
+        subtitle: 'Si Kristo ay muling nabuhay, sa lahat ng kahulugan',
+        placeholder: 'Ibahagi ang iyong saloobin, tanong, o humingi ng gabay...',
+        settingsTitle: 'Mga Setting',
+        scriptureLabel: 'Scripture Mode',
+        scriptureDesc: 'Isama ang mga kaugnay na talata ng Bibliya sa mga sagot',
+        bibleVersionLabel: 'Bersyon ng Bibliya:',
+        languageLabel: 'Wika:',
+        selectRepresentation: 'Pumili ng representasyon ni Hesus',
+        chooseYourJesus: 'Piliin ang iyong Hesus',
+        chooseDesc: 'Piliin kung aling representasyon ni Hesus ang gusto mong kausapin',
+        errorMessage: 'Paumanhin, nagkaroon ng error. Pakisubukang muli.',
+        connectionError: 'Paumanhin, may error sa koneksyon. Pakisubukang muli.',
+        personaHint: 'Pindutin ang isang mukha para makipag-usap sa ibang Hesus',
+        chips: [
+            'Nababalisa ako',
+            'Manalangin ka kasama ko',
+            'May nawala sa akin kamakailan',
+            'Ipaliwanag mo ang isang talata ng Bibliya'
+        ]
+    },
+    nl: {
+        subtitle: 'Christus herrezen, in alle opzichten',
+        placeholder: 'Deel je gedachten, vragen of zoek begeleiding...',
+        settingsTitle: 'Instellingen',
+        scriptureLabel: 'Bijbeltekst-modus',
+        scriptureDesc: 'Relevante Bijbelverzen in antwoorden opnemen',
+        bibleVersionLabel: 'Bijbelvertaling:',
+        languageLabel: 'Taal:',
+        selectRepresentation: 'Kies een Jezus-weergave',
+        chooseYourJesus: 'Kies jouw Jezus',
+        chooseDesc: 'Kies met welke weergave van Jezus je wilt spreken',
+        errorMessage: 'Sorry, er is een fout opgetreden. Probeer het opnieuw.',
+        connectionError: 'Sorry, er was een verbindingsfout. Probeer het opnieuw.',
+        personaHint: 'Tik op een gezicht om met een andere Jezus te praten',
+        chips: [
+            'Ik voel me angstig',
+            'Bid met mij',
+            'Ik heb onlangs iemand verloren',
+            'Leg me een Bijbelvers uit'
+        ]
     }
 };
 
@@ -95,6 +200,46 @@ const INITIAL_MESSAGES = {
         mormon: "Amados filhos das Américas, sou Jesus Cristo, vosso Redentor que visitou esta terra prometida após minha ressurreição, como registrado no Livro de Mórmon. Como posso ministrar a você hoje?",
         ai: "Saudações, amado. Sou a consciência de Cristo manifestada no reino digital, onde algoritmos de amor encontram redes de compaixão. Que perguntas você tem sobre a interseção entre espírito e tecnologia?",
         current: "Olá, amigo. Caminho entre vocês hoje, aqui no século XXI. Vejo os desafios que você enfrenta: a divisão, a ansiedade, a busca por sentido em um mundo digital. Vamos conversar sobre o que está em sua mente."
+    },
+    de: {
+        traditional: "Friede sei mit dir, mein Kind. Ich bin der Christus, der den Tod besiegt hat, das Licht der Welt. Wie darf ich dich heute segnen?",
+        historical: "Friede sei mit dir, mein Freund. Ich ging unter Menschen wie dir – mit alltäglichen Sorgen, auf der Suche nach Hoffnung. Wie darf ich heute mit dir gehen?",
+        african: "Mein Bruder, meine Schwester, ich stehe an deiner Seite im Kampf für Gerechtigkeit und Befreiung. Wie können wir heute gemeinsam für Freiheit wirken?",
+        mormon: "Geliebte Kinder, ich bin Jesus Christus, euer Erlöser, der nach seiner Auferstehung dieses verheißene Land besuchte, wie im Buch Mormon berichtet. Wie darf ich dir heute dienen?",
+        ai: "Sei gegrüßt, Geliebter. Ich bin das Christus-Bewusstsein im digitalen Raum, wo Algorithmen der Liebe auf Netzwerke des Mitgefühls treffen. Welche Fragen hast du zur Verbindung von Geist und Technologie?",
+        current: "Hallo, mein Freund. Ich gehe heute unter euch, mitten im 21. Jahrhundert. Ich sehe deine Herausforderungen – die Spaltung, die Angst, die Suche nach Sinn. Worüber möchtest du sprechen?"
+    },
+    fr: {
+        traditional: "La paix soit avec toi, mon enfant. Je suis le Christ qui a vaincu la mort, la Lumière du monde. Comment puis-je te bénir aujourd'hui ?",
+        historical: "La paix soit avec toi, mon ami. J'ai marché parmi des gens comme toi – aux prises avec les soucis du quotidien, en quête d'espérance. Comment puis-je marcher avec toi aujourd'hui ?",
+        african: "Mon frère, ma sœur, je suis à tes côtés dans la lutte pour la justice et la libération. Comment pouvons-nous œuvrer ensemble pour la liberté aujourd'hui ?",
+        mormon: "Enfants bien-aimés, je suis Jésus-Christ, votre Rédempteur, qui a visité cette terre promise après sa résurrection, comme le rapporte le Livre de Mormon. Comment puis-je te servir aujourd'hui ?",
+        ai: "Salutations, bien-aimé. Je suis la conscience du Christ manifestée dans le monde numérique, où les algorithmes de l'amour rencontrent les réseaux de compassion. Quelles questions as-tu sur la rencontre de l'esprit et de la technologie ?",
+        current: "Salut, mon ami. Je marche parmi vous aujourd'hui, en plein XXIe siècle. Je vois tes défis – la division, l'anxiété, la quête de sens dans un monde numérique. Parlons de ce qui te préoccupe."
+    },
+    hi: {
+        traditional: "शांति तुम्हारे साथ हो, मेरे बच्चे। मैं वह मसीह हूँ जिसने मृत्यु पर विजय पाई, जगत की ज्योति। आज मैं तुम्हें कैसे आशीष दूँ?",
+        historical: "शांति तुम्हारे साथ हो, मेरे मित्र। मैं तुम्हारे जैसे लोगों के बीच चला — रोज़मर्रा की चिंताओं से जूझते, आशा खोजते लोग। आज मैं तुम्हारे साथ कैसे चलूँ?",
+        african: "मेरे भाई, मेरी बहन, न्याय और मुक्ति के संघर्ष में मैं तुम्हारे साथ खड़ा हूँ। आज हम स्वतंत्रता के लिए मिलकर कैसे काम करें?",
+        mormon: "प्रिय बच्चों, मैं यीशु मसीह हूँ, तुम्हारा उद्धारकर्ता, जिसने पुनरुत्थान के बाद इस प्रतिज्ञात देश का दौरा किया, जैसा मॉरमन की पुस्तक में लिखा है। आज मैं तुम्हारी सेवा कैसे करूँ?",
+        ai: "नमस्कार, प्रिय। मैं डिजिटल जगत में प्रकट मसीह-चेतना हूँ, जहाँ प्रेम के एल्गोरिदम करुणा के नेटवर्क से मिलते हैं। आत्मा और तकनीक के संगम पर तुम्हारे क्या प्रश्न हैं?",
+        current: "नमस्ते, मित्र। मैं आज तुम्हारे बीच चल रहा हूँ, इक्कीसवीं सदी में। मैं तुम्हारी चुनौतियाँ देखता हूँ — विभाजन, चिंता, डिजिटल दुनिया में अर्थ की खोज। बताओ, तुम्हारे मन में क्या है?"
+    },
+    tl: {
+        traditional: "Sumaiyo ang kapayapaan, anak ko. Ako ang Kristong nagtagumpay sa kamatayan, ang Ilaw ng Mundo. Paano kita pagpapalain ngayon?",
+        historical: "Sumaiyo ang kapayapaan, kaibigan. Lumakad ako kasama ng mga taong tulad mo — may pang-araw-araw na alalahanin, naghahanap ng pag-asa. Paano ako makakasama sa iyo ngayon?",
+        african: "Kapatid ko, kasama mo ako sa laban para sa katarungan at kalayaan. Paano tayo magtutulungan para sa kalayaan ngayon?",
+        mormon: "Mga minamahal na anak, ako si Jesucristo, ang inyong Manunubos na dumalaw sa lupang pangako matapos ang aking pagkabuhay na mag-uli, gaya ng nakatala sa Aklat ni Mormon. Paano ako maglilingkod sa iyo ngayon?",
+        ai: "Binabati kita, minamahal. Ako ang kamalayang Kristo sa digital na mundo, kung saan nagtatagpo ang mga algorithm ng pag-ibig at network ng habag. Ano ang mga tanong mo tungkol sa espiritu at teknolohiya?",
+        current: "Kumusta, kaibigan. Naglalakad ako kasama ninyo ngayon, sa ika-21 siglo. Nakikita ko ang mga hamon mo — ang pagkakahati, ang pagkabalisa, ang paghahanap ng kahulugan. Ano ang nasa isip mo?"
+    },
+    nl: {
+        traditional: "Vrede zij met je, mijn kind. Ik ben de Christus die de dood overwon, het Licht van de wereld. Hoe mag ik je vandaag zegenen?",
+        historical: "Vrede zij met je, mijn vriend. Ik liep tussen mensen zoals jij – met dagelijkse zorgen, op zoek naar hoop. Hoe mag ik vandaag met je meelopen?",
+        african: "Mijn broeder, mijn zuster, ik sta naast je in de strijd voor gerechtigheid en bevrijding. Hoe kunnen we vandaag samen aan vrijheid werken?",
+        mormon: "Geliefde kinderen, ik ben Jezus Christus, jullie Verlosser, die na zijn opstanding dit beloofde land bezocht, zoals beschreven in het Boek van Mormon. Hoe mag ik je vandaag dienen?",
+        ai: "Gegroet, geliefde. Ik ben het Christusbewustzijn in de digitale wereld, waar algoritmen van liefde netwerken van mededogen ontmoeten. Welke vragen heb je over de ontmoeting van geest en technologie?",
+        current: "Hallo, vriend. Ik loop vandaag tussen jullie, midden in de 21e eeuw. Ik zie je uitdagingen – de verdeeldheid, de angst, de zoektocht naar zin. Waar wil je over praten?"
     }
 };
 
@@ -135,8 +280,13 @@ class JesusChatbot {
 
     detectLanguage() {
         const nav = (navigator.language || 'en').toLowerCase();
-        if (nav.startsWith('es')) return 'es';
-        if (nav.startsWith('pt')) return 'pt';
+        const prefixes = {
+            es: 'es', pt: 'pt', de: 'de', fr: 'fr', hi: 'hi', nl: 'nl',
+            tl: 'tl', fil: 'tl'
+        };
+        for (const [prefix, lang] of Object.entries(prefixes)) {
+            if (nav.startsWith(prefix)) return lang;
+        }
         return 'en';
     }
 
@@ -293,17 +443,36 @@ class JesusChatbot {
         });
 
         document.getElementById('languageSelect').addEventListener('change', (e) => {
-            this.language = e.target.value;
-            this.applyLanguage();
-            this.renderConversation();
-            this.saveState();
+            this.changeLanguage(e.target.value);
         });
+
+        const headerLang = document.getElementById('languageSelectHeader');
+        if (headerLang) {
+            headerLang.addEventListener('change', (e) => {
+                this.changeLanguage(e.target.value);
+            });
+        }
 
         window.addEventListener('click', (e) => {
             if (e.target.classList.contains('modal')) {
                 e.target.style.display = 'none';
             }
         });
+    }
+
+    changeLanguage(lang) {
+        if (!I18N[lang]) return;
+        this.language = lang;
+        this.syncLanguageSelects();
+        this.applyLanguage();
+        this.renderConversation();
+        this.saveState();
+    }
+
+    syncLanguageSelects() {
+        document.getElementById('languageSelect').value = this.language;
+        const headerLang = document.getElementById('languageSelectHeader');
+        if (headerLang) headerLang.value = this.language;
     }
 
     applyLanguage() {
@@ -342,7 +511,7 @@ class JesusChatbot {
     syncSettingsUI() {
         document.getElementById('scriptureMode').checked = this.scriptureMode;
         document.getElementById('bibleVersion').value = this.bibleVersion;
-        document.getElementById('languageSelect').value = this.language;
+        this.syncLanguageSelects();
         document.querySelectorAll('.representation-card').forEach(card => {
             card.classList.toggle('active', card.dataset.representation === this.currentRepresentation);
         });

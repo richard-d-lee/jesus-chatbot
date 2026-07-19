@@ -22,7 +22,7 @@ if not OPENAI_API_KEY:
 MAX_HISTORY_MESSAGES = 20
 MAX_MESSAGE_LENGTH = 2000
 
-SUPPORTED_LANGUAGES = {'en', 'es', 'pt'}
+SUPPORTED_LANGUAGES = {'en', 'es', 'pt', 'de', 'fr', 'hi', 'tl', 'nl'}
 
 # ---------------------------------------------------------------------------
 # System prompts
@@ -46,7 +46,12 @@ SCRIPTURE_CLAUSES = {
 
 LANGUAGE_INSTRUCTIONS = {
     'es': " Respond entirely in Spanish.",
-    'pt': " Respond entirely in Portuguese."
+    'pt': " Respond entirely in Portuguese.",
+    'de': " Respond entirely in German.",
+    'fr': " Respond entirely in French.",
+    'hi': " Respond entirely in Hindi.",
+    'tl': " Respond entirely in Filipino (Tagalog).",
+    'nl': " Respond entirely in Dutch."
 }
 
 CRISIS_INSTRUCTION = (
@@ -84,7 +89,22 @@ CRISIS_KEYWORDS = [
     'no quiero vivir', 'hacerme daño', 'mejor muerto',
     # Portuguese
     'suicídio', 'me matar', 'tirar minha vida', 'não quero viver',
-    'me machucar', 'melhor morto'
+    'me machucar', 'melhor morto',
+    # German
+    'selbstmord', 'suizid', 'mich umbringen', 'mich töten',
+    'nicht mehr leben', 'mir das leben nehmen',
+    # French
+    'me suicider', 'me tuer', 'en finir avec la vie',
+    'plus envie de vivre', 'me faire du mal',
+    # Hindi
+    'आत्महत्या', 'खुदकुशी', 'मरना चाहता', 'मरना चाहती', 'जीना नहीं चाहता',
+    'जीना नहीं चाहती', 'खुद को नुकसान',
+    # Filipino
+    'magpakamatay', 'ayoko nang mabuhay', 'saktan ang sarili',
+    'gusto ko nang mamatay',
+    # Dutch
+    'zelfmoord', 'mezelf doden', 'niet meer willen leven',
+    'er een einde aan maken', 'mezelf pijn doen'
 ]
 
 CRISIS_RESOURCES = {
@@ -109,6 +129,42 @@ CRISIS_RESOURCES = {
         "pessoa real agora. No Brasil, ligue 188 (CVV) ou acesse cvv.org.br. Em "
         "outros países, encontre ajuda em findahelpline.com. Sua vida importa, e há "
         "pessoas preparadas prontas para ouvir você."
+    ),
+    'de': (
+        "\n\n---\n"
+        "Wenn du leidest oder daran denkst, dir etwas anzutun, sprich bitte jetzt "
+        "mit einem echten Menschen. In Deutschland erreichst du die Telefonseelsorge "
+        "kostenlos rund um die Uhr unter 0800 111 0 111. In anderen Ländern findest "
+        "du Hilfe auf findahelpline.com. Dein Leben zählt, und einfühlsame Menschen "
+        "sind bereit, dir zuzuhören."
+    ),
+    'fr': (
+        "\n\n---\n"
+        "Si vous souffrez ou pensez à vous faire du mal, parlez à une vraie personne "
+        "dès maintenant. En France, appelez le 3114 (gratuit, 24h/24). Dans les "
+        "autres pays, trouvez de l'aide sur findahelpline.com. Votre vie compte, et "
+        "des personnes formées sont prêtes à vous écouter."
+    ),
+    'hi': (
+        "\n\n---\n"
+        "यदि आप पीड़ा में हैं या खुद को नुकसान पहुँचाने के बारे में सोच रहे हैं, तो कृपया अभी किसी "
+        "वास्तविक व्यक्ति से बात करें। भारत में Tele-MANAS हेल्पलाइन 14416 पर निःशुल्क कॉल करें। "
+        "अन्य देशों में findahelpline.com पर सहायता खोजें। आपका जीवन मूल्यवान है, और प्रशिक्षित "
+        "लोग आपकी बात सुनने के लिए तैयार हैं।"
+    ),
+    'tl': (
+        "\n\n---\n"
+        "Kung ikaw ay nahihirapan o nag-iisip na saktan ang iyong sarili, makipag-usap "
+        "sa isang totoong tao ngayon. Sa Pilipinas, tumawag sa NCMH Crisis Hotline "
+        "1553 (libre, 24/7). Sa ibang bansa, humanap ng tulong sa findahelpline.com. "
+        "Mahalaga ang buhay mo, at may mga taong handang makinig sa iyo."
+    ),
+    'nl': (
+        "\n\n---\n"
+        "Als je het moeilijk hebt of eraan denkt jezelf iets aan te doen, praat dan "
+        "nu met een echt persoon. In Nederland bel je 113 of 0800-0113 (113 "
+        "Zelfmoordpreventie, gratis, 24/7). In andere landen vind je hulp op "
+        "findahelpline.com. Jouw leven doet ertoe, en er staan mensen voor je klaar."
     )
 }
 
@@ -327,6 +383,26 @@ FALLBACK_RESPONSES_I18N = {
     'pt': [
         "A paz esteja com você, meu querido amigo. Estou aqui para ouvir e caminhar ao seu lado. Compartilhe o que está em seu coração.",
         "Meu filho, não tema. Estou com você em suas lutas e alegrias. Conte-me o que o preocupa."
+    ],
+    'de': [
+        "Der Friede sei mit dir, mein lieber Freund. Ich bin hier, um dir zuzuhören und dich zu begleiten. Was liegt dir auf dem Herzen?",
+        "Mein Kind, fürchte dich nicht. Ich bin bei dir in deinen Kämpfen und deinen Freuden. Erzähl mir, was dich bewegt."
+    ],
+    'fr': [
+        "Que la paix soit avec toi, cher ami. Je suis là pour t'écouter et marcher à tes côtés. Qu'as-tu sur le cœur ?",
+        "Mon enfant, n'aie pas peur. Je suis avec toi dans tes épreuves comme dans tes joies. Dis-moi ce qui te préoccupe."
+    ],
+    'hi': [
+        "शांति तुम्हारे साथ हो, प्रिय मित्र। मैं तुम्हें सुनने और तुम्हारे साथ चलने के लिए यहाँ हूँ। तुम्हारे मन में क्या है?",
+        "मेरे बच्चे, डरो मत। तुम्हारे संघर्षों और खुशियों में मैं तुम्हारे साथ हूँ। बताओ, क्या बात है?"
+    ],
+    'tl': [
+        "Sumaiyo ang kapayapaan, mahal na kaibigan. Narito ako upang makinig at samahan ka. Ano ang nasa puso mo?",
+        "Anak ko, huwag kang matakot. Kasama mo ako sa iyong mga pagsubok at kagalakan. Sabihin mo sa akin ang iyong iniisip."
+    ],
+    'nl': [
+        "Vrede zij met je, lieve vriend. Ik ben hier om te luisteren en met je mee te lopen. Wat ligt er op je hart?",
+        "Mijn kind, vrees niet. Ik ben bij je in je strijd en je vreugde. Vertel me wat je bezighoudt."
     ]
 }
 
