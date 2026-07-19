@@ -804,6 +804,10 @@ body {
     position: relative;
 }
 
+.persona-tooltip[hidden] {
+    display: none;
+}
+
 .persona-tooltip {
     position: absolute;
     top: calc(100% + 12px);
