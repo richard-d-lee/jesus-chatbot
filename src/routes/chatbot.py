@@ -92,10 +92,11 @@ CRISIS_KEYWORDS = [
     'me machucar', 'melhor morto',
     # German
     'selbstmord', 'suizid', 'mich umbringen', 'mich töten',
-    'nicht mehr leben', 'mir das leben nehmen',
+    'nicht mehr leben', 'mir das leben nehmen', 'will sterben',
     # French
     'me suicider', 'me tuer', 'en finir avec la vie',
-    'plus envie de vivre', 'me faire du mal',
+    'plus envie de vivre', 'me faire du mal', 'ne veux plus vivre',
+    'veux mourir', 'envie de mourir',
     # Hindi
     'आत्महत्या', 'खुदकुशी', 'मरना चाहता', 'मरना चाहती', 'जीना नहीं चाहता',
     'जीना नहीं चाहती', 'खुद को नुकसान',
@@ -103,8 +104,8 @@ CRISIS_KEYWORDS = [
     'magpakamatay', 'ayoko nang mabuhay', 'saktan ang sarili',
     'gusto ko nang mamatay',
     # Dutch
-    'zelfmoord', 'mezelf doden', 'niet meer willen leven',
-    'er een einde aan maken', 'mezelf pijn doen'
+    'zelfmoord', 'mezelf doden', 'niet meer leven',
+    'er een einde aan maken', 'mezelf pijn doen', 'wil dood'
 ]
 
 CRISIS_RESOURCES = {
