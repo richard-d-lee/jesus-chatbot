@@ -20,6 +20,8 @@ const I18N = {
         errorMessage: 'I apologize, but I encountered an error. Please try again.',
         connectionError: 'I apologize, but I encountered an error connecting. Please try again.',
         personaHint: 'Tap a face to talk with a different Jesus',
+        maintenanceNotice: "Jesus Express seems to be having trouble reaching its AI right now, so you may be seeing generic responses. Please check back later.",
+        donateHint: 'Enjoying these conversations? Consider supporting Jesus Express with a small donation.',
         chips: [
             "I'm feeling anxious",
             'Pray with me',
@@ -41,6 +43,8 @@ const I18N = {
         errorMessage: 'Lo siento, ocurrió un error. Por favor, inténtalo de nuevo.',
         connectionError: 'Lo siento, hubo un error de conexión. Por favor, inténtalo de nuevo.',
         personaHint: 'Toca un rostro para hablar con un Jesús diferente',
+        maintenanceNotice: 'Jesus Express parece tener problemas para conectar con su IA en este momento, así que es posible que veas respuestas genéricas. Por favor, vuelve más tarde.',
+        donateHint: '¿Disfrutas estas conversaciones? Considera apoyar a Jesus Express con una pequeña donación.',
         chips: [
             'Me siento ansioso',
             'Ora conmigo',
@@ -62,6 +66,8 @@ const I18N = {
         errorMessage: 'Desculpe, ocorreu um erro. Por favor, tente novamente.',
         connectionError: 'Desculpe, houve um erro de conexão. Por favor, tente novamente.',
         personaHint: 'Toque em um rosto para falar com um Jesus diferente',
+        maintenanceNotice: 'O Jesus Express parece estar com dificuldades para se conectar à IA agora, então você pode estar vendo respostas genéricas. Por favor, volte mais tarde.',
+        donateHint: 'Está gostando dessas conversas? Considere apoiar o Jesus Express com uma pequena doação.',
         chips: [
             'Estou me sentindo ansioso',
             'Ore comigo',
@@ -83,6 +89,8 @@ const I18N = {
         errorMessage: 'Es tut mir leid, es ist ein Fehler aufgetreten. Bitte versuche es erneut.',
         connectionError: 'Es tut mir leid, es gab einen Verbindungsfehler. Bitte versuche es erneut.',
         personaHint: 'Tippe auf ein Gesicht, um mit einem anderen Jesus zu sprechen',
+        maintenanceNotice: 'Jesus Express hat gerade offenbar Probleme, die KI zu erreichen, daher siehst du möglicherweise allgemeine Antworten. Bitte schau später noch einmal vorbei.',
+        donateHint: 'Gefallen dir diese Gespräche? Unterstütze Jesus Express doch mit einer kleinen Spende.',
         chips: [
             'Ich fühle mich ängstlich',
             'Bete mit mir',
@@ -104,6 +112,8 @@ const I18N = {
         errorMessage: "Je suis désolé, une erreur s'est produite. Veuillez réessayer.",
         connectionError: 'Désolé, une erreur de connexion est survenue. Veuillez réessayer.',
         personaHint: 'Touchez un visage pour parler avec un autre Jésus',
+        maintenanceNotice: "Jesus Express semble avoir du mal à joindre son IA en ce moment, vous voyez donc peut-être des réponses génériques. Merci de revenir plus tard.",
+        donateHint: 'Vous appréciez ces conversations ? Pensez à soutenir Jesus Express avec un petit don.',
         chips: [
             'Je me sens anxieux',
             'Prie avec moi',
@@ -125,6 +135,8 @@ const I18N = {
         errorMessage: 'क्षमा करें, एक त्रुटि हुई। कृपया पुनः प्रयास करें।',
         connectionError: 'क्षमा करें, कनेक्शन में त्रुटि हुई। कृपया पुनः प्रयास करें।',
         personaHint: 'किसी दूसरे यीशु से बात करने के लिए चेहरे पर टैप करें',
+        maintenanceNotice: 'ऐसा लगता है कि Jesus Express अभी अपने AI से जुड़ने में समस्या का सामना कर रहा है, इसलिए हो सकता है आपको सामान्य उत्तर दिख रहे हों। कृपया बाद में फिर से देखें।',
+        donateHint: 'इन बातचीत का आनंद ले रहे हैं? कृपया एक छोटे दान के साथ Jesus Express का समर्थन करने पर विचार करें।',
         chips: [
             'मैं चिंतित महसूस कर रहा हूँ',
             'मेरे साथ प्रार्थना करें',
@@ -146,6 +158,8 @@ const I18N = {
         errorMessage: 'Paumanhin, nagkaroon ng error. Pakisubukang muli.',
         connectionError: 'Paumanhin, may error sa koneksyon. Pakisubukang muli.',
         personaHint: 'Pindutin ang isang mukha para makipag-usap sa ibang Hesus',
+        maintenanceNotice: 'Mukhang nahihirapan ang Jesus Express na kumonekta sa AI nito ngayon, kaya maaaring nakikita mo ang mga generic na sagot. Pakibalikan na lang mamaya.',
+        donateHint: 'Nasisiyahan ka ba sa mga pag-uusap na ito? Pag-isipang suportahan ang Jesus Express sa pamamagitan ng isang maliit na donasyon.',
         chips: [
             'Nababalisa ako',
             'Manalangin ka kasama ko',
@@ -167,6 +181,8 @@ const I18N = {
         errorMessage: 'Sorry, er is een fout opgetreden. Probeer het opnieuw.',
         connectionError: 'Sorry, er was een verbindingsfout. Probeer het opnieuw.',
         personaHint: 'Tik op een gezicht om met een andere Jezus te praten',
+        maintenanceNotice: 'Jesus Express lijkt momenteel moeite te hebben om de AI te bereiken, dus je ziet mogelijk algemene antwoorden. Kom later nog eens terug.',
+        donateHint: 'Geniet je van deze gesprekken? Overweeg om Jesus Express te steunen met een kleine donatie.',
         chips: [
             'Ik voel me angstig',
             'Bid met mij',
@@ -373,6 +389,8 @@ class JesusChatbot {
         this.syncSettingsUI();
         this.renderConversation();
         this.initPersonaTooltip();
+        this.initDonateTooltip();
+        this.initMaintenanceToast();
     }
 
     // ------------------------------------------------------------------
@@ -409,6 +427,83 @@ class JesusChatbot {
         const tooltip = document.getElementById('personaTooltip');
         if (tooltip) tooltip.hidden = true;
         document.getElementById('headerJesusImage').classList.remove('pulse');
+    }
+
+    // ------------------------------------------------------------------
+    // Donate toast: a monthly reminder, nudging engaged users to support
+    // the project. Mirrors the persona tooltip's look and dismiss behavior,
+    // but re-appears roughly once a month instead of only once ever.
+    // ------------------------------------------------------------------
+
+    initDonateTooltip() {
+        const tooltip = document.getElementById('donateTooltip');
+        if (!tooltip) return;
+
+        const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
+        const lastShown = Number(localStorage.getItem('donateHintLastShown') || 0);
+        if (Date.now() - lastShown < THIRTY_DAYS_MS) return;
+
+        document.getElementById('donateTooltipClose').addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.dismissDonateHint();
+        });
+
+        // Appear a bit after the persona hint so they don't pop in together
+        setTimeout(() => {
+            this.updateDonateHint();
+            tooltip.hidden = false;
+            try { localStorage.setItem('donateHintLastShown', String(Date.now())); } catch {}
+            setTimeout(() => this.dismissDonateHint(), 12000);
+        }, 2500);
+    }
+
+    updateDonateHint() {
+        const text = document.getElementById('donateTooltipText');
+        if (text) text.textContent = this.t('donateHint');
+    }
+
+    dismissDonateHint() {
+        const tooltip = document.getElementById('donateTooltip');
+        if (tooltip) tooltip.hidden = true;
+    }
+
+    // ------------------------------------------------------------------
+    // Maintenance toast: shown when a chat reply came from the canned
+    // fallback responses (the OpenAI request failed - e.g. rate limited,
+    // out of quota, or the key is misconfigured) so users understand why
+    // replies suddenly look generic instead of assuming the bot is broken.
+    // ------------------------------------------------------------------
+
+    initMaintenanceToast() {
+        const toast = document.getElementById('maintenanceToast');
+        if (!toast) return;
+        document.getElementById('maintenanceToastClose').addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.hideMaintenanceNotice();
+        });
+    }
+
+    showMaintenanceNotice() {
+        const MIN_GAP_MS = 10 * 60 * 1000; // avoid re-popping on every message during an outage
+        const lastShown = Number(localStorage.getItem('maintenanceNoticeLastShown') || 0);
+        if (Date.now() - lastShown < MIN_GAP_MS) return;
+
+        const toast = document.getElementById('maintenanceToast');
+        const text = document.getElementById('maintenanceToastText');
+        if (!toast || !text) return;
+
+        text.textContent = this.t('maintenanceNotice');
+        toast.hidden = false;
+        try { localStorage.setItem('maintenanceNoticeLastShown', String(Date.now())); } catch {}
+
+        clearTimeout(this._maintenanceToastTimer);
+        this._maintenanceToastTimer = setTimeout(() => this.hideMaintenanceNotice(), 10000);
+    }
+
+    hideMaintenanceNotice() {
+        const toast = document.getElementById('maintenanceToast');
+        if (toast) toast.hidden = true;
+        clearTimeout(this._maintenanceToastTimer);
     }
 
     // ------------------------------------------------------------------
@@ -553,6 +648,7 @@ class JesusChatbot {
 
         this.renderChips();
         this.updatePersonaHint();
+        this.updateDonateHint();
         this.updateJesusImage();
     }
 
@@ -690,16 +786,22 @@ class JesusChatbot {
 
             const contentType = response.headers.get('Content-Type') || '';
             let fullText = '';
+            let source = 'openai';
 
             if (contentType.includes('text/event-stream') && response.body) {
-                fullText = await this.consumeStream(response);
+                ({ text: fullText, source } = await this.consumeStream(response));
             } else {
                 // Server answered with plain JSON (fallback path)
                 const data = await response.json();
                 this.removeTypingIndicator();
                 if (!data.success) throw new Error('Chat failed');
                 fullText = data.response;
+                source = data.source || 'openai';
                 this.addMessageToChat(fullText, 'jesus');
+            }
+
+            if (source === 'fallback') {
+                this.showMaintenanceNotice();
             }
 
             this.conversations[this.currentRepresentation].push({
@@ -723,6 +825,7 @@ class JesusChatbot {
         const decoder = new TextDecoder();
         let buffer = '';
         let fullText = '';
+        let source = 'openai';
         let messageSpan = null;
         const chatMessages = document.getElementById('chatMessages');
 
@@ -754,6 +857,9 @@ class JesusChatbot {
                     messageSpan.textContent = fullText;
                     chatMessages.scrollTop = chatMessages.scrollHeight;
                 }
+                if (payload.done) {
+                    source = payload.source || 'openai';
+                }
             }
         }
 
@@ -762,7 +868,7 @@ class JesusChatbot {
             this.removeTypingIndicator();
             throw new Error('Empty stream');
         }
-        return fullText;
+        return { text: fullText, source };
     }
 
     addMessageToChat(content, sender, scroll = true) {
